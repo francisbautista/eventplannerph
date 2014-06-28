@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-
-
   devise_for :users
 
   resources :amenities
@@ -12,5 +10,6 @@ Rails.application.routes.draw do
         end
     end
 
-    resources :event_types
+
+	resources :event_types
 end
