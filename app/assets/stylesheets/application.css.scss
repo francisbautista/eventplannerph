@@ -14,5 +14,18 @@
  *= require_self
  */
 
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
 
- @import "bootstrap"
+
+
+/* GLOBAL VARIABLES
+---------------------------------------------------------------------------------------------- */
+
+$salmon: rgba(255, 103, 89, 1); 
+$navhover: rgba(255, 103, 89, 0.5);/* #ff6759 */
+$lblue: rgba(62, 200,  230, 1); /* #3ec8e6 */
+$gray: rgba(87, 94, 92, 1); /* #575e5c  */ 
+$cream: rgba(253, 242, 211, 1); /* #fdf2d3  */
+$white: rgba(255, 255, 245, 1); /* #fffff5 */
+

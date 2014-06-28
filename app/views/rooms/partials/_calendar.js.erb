@@ -1,0 +1,135 @@
+<div>
+<script>
+$(document).ready(function() {
+
+    var date = new Date();
+    var d = date.getDate();
+    var m = date.getMonth();
+    var y = date.getFullYear();
+
+    $('#calendar').fullCalendar({
+        editable: true,
+        header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay'
+        },
+    defaultView: 'agendaWeek',
+    height: 500,
+    slotMinutes: 15,
+    minTime: 7,
+    maxTime: 22,
+    firstHour: 8,
+
+    loading: function(bool){
+        if (bool)
+        $('#loading').show();
+        else
+        $('#loading').hide();
+    },
+
+    selectable: true,
+    selectHelper: true,
+
+    // a future calendar might have many sources.
+    eventSources: [
+    {
+        url: "<%=venue_room_bookings_path(@venue, @room, @booking)%>",
+        color: '#ff6759',
+        textColor: 'black',
+        ignoreTimezone: false
+    }
+    ],
+
+    timeFormat: 'h:mm t{ - h:mm t} ',
+    dragOpacity: "0.5",
+
+    select: function(start, end, allDay) {
+        window.open("/venues/1/rooms/1/bookings/new?starts_at="+start+"&ends_at="+end,"_self")
+    },
+
+    //http://arshaw.com/fullcalendar/docs/event_ui/eventDrop/
+    eventDrop: function(event, dayDelta, minuteDelta, allDay, revertFunc){
+        updateEvent(event);
+    },
+
+    // http://arshaw.com/fullcalendar/docs/event_ui/eventResize/
+    eventResize: function(event, dayDelta, minuteDelta, revertFunc){
+        updateEvent(event);
+    },
+
+    // http://arshaw.com/fullcalendar/docs/mouse/eventClick/
+
+
+    eventClick: function(event, jsEvent, view){
+        window.location.replace("/venues/"+"<%= @venue.id %>"+"/rooms/"+"<%=@room.id%>/bookings/"+event.id+"/edit");
+    },
+});
+});
+
+function updateEvent(the_event) {
+    $.ajax({
+        type: 'put',
+        url: "<%=venue_room_bookings_path(@venue, @room, @booking)%>" + the_event.id,
+        headers: {
+            'X-Transaction': 'put',
+            'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+        },
+        data:
+        {
+            event: { title: the_event.title,
+                start: "" + the_event.starts_at,
+                end: "" + the_event.ends_at,
+                message: the_event.message
+            }
+        },
+        complete:  function (reponse) { }
+    });
+};
+
+function addEvent(the_event) {
+    $.ajax({
+        type: 'post',
+        url: "<%=new_venue_room_booking_path(@venue, @room,@booking)%>",
+        headers: {
+            'X-Transaction': 'POST',
+            'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+        },
+        data:
+        {
+            event: {
+                title: the_event.title,
+                start: "" + the_event.starts_at,
+                end: "" + the_event.ends_at,
+                message: the_event.message
+            }
+        },
+        complete: function (reponse) { }
+    });
+};
+
+$('#submitButton').on('click', function(e){
+    // We don't want this to act as a link so cancel the link action
+    e.preventDefault();
+
+    doSubmit();
+});
+
+function doSubmit(){
+    $("#createEventModal").modal('hide');
+    console.log($('#apptStartTime').val());
+    console.log($('#apptEndTime').val());
+    console.log($('#apptAllDay').val());
+    alert("form submitted");
+
+    $("#calendar").fullCalendar('renderEvent',
+    {
+        title: $('#eventName').val(),
+        start: new Date($('#apptStartTime').val()),
+        end: new Date($('#apptEndTime').val()),
+        allDay: ($('#apptAllDay').val() == "true")
+    },
+    true);
+}
+</script>
+</div>
