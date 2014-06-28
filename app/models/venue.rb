@@ -1,5 +1,8 @@
 class Venue < ActiveRecord::Base
 
+  # Model Relations-----------------#
+  belongs_to :supplier
+
   # Venue Classification Types:
   # Pull validations from this method
   CLASSIFICATION = ["Bar", "Restaurant", "Hotel",
