@@ -31,7 +31,15 @@ $white: rgba(255, 255, 245, 1); /* #fffff5 */
 
 body {
 	background-color: $white;
+	font-family: 'Open Sans', sans-serif;
+
 }
+
+h1, h2, h3 {
+	font-family: 'Cabin', sans-serif;
+	font-weight: bold;
+}
+
 
 .footer a {
 	color: #FFF;
@@ -55,19 +63,62 @@ body {
 }
 
 .landingbody {
-	height: 100%;
+	height: auto;
 	min-height: 1000px;
 	position: relative;
 }
 
-.clear {
-	clear: both;
+.landingcontent {
+	clear:both;
+	min-height: 2000px;
+	height: 100%;
+	background-color: $white;
+}
+
+/*** BOOTSTRAP OVERRIDES: EVPH THEME ***/
+
+.btn {
+	border-radius: 0px;
+	width: 100px;
+	margin: 5px;
+}
+
+.btn.btn-sm {
+	width: 80px;
+}
+
+.btn-danger {
+	background-color: $salmon;
+}
+
+.btn-info {
+	background-color: $lblue;
+}
+
+.panel {
+	margin-top: 20px;
+	border-radius: 0px;
+}
+
+.panel-danger > .panel-heading {
+	background-color: $salmon;
+	border-radius: 0px;
+}
+
+.panel-info > .panel-heading {
+	background-color: $lblue;
+	border-radius: 0px;
+}
+
+.panel-default > .panel-heading {
+	border-radius: 0px
 }
 
 .footer {
 	background-color: $salmon;
 	position: absolute;
 	bottom: 0;
+	height: auto;
 	width: 100%;
 	padding: 20px;
 
