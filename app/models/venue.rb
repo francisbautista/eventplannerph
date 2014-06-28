@@ -1,7 +1,7 @@
 class Venue < ActiveRecord::Base
 
   # Venue Classification Types:
-  #   Pull validations from this method
+  # Pull validations from this method
   CLASSIFICATION = ["Bar", "Restaurant", "Hotel",
                     "Farm/Hacienda", "Garden",
                     "Church","Ballroom", "Gallery",

@@ -11,7 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140628064916) do
+ActiveRecord::Schema.define(version: 20140628065333) do
+
+  create_table "bookings", force: true do |t|
+    t.string   "title"
+    t.date     "date_reserved"
+    t.datetime "starts_at"
+    t.datetime "ends_at"
+    t.string   "all_day"
+    t.string   "status"
+    t.string   "message"
+    t.datetime "expiry_date"
+    t.boolean  "is_viewed"
+    t.boolean  "all_reserved"
+    t.integer  "venue_id"
+    t.integer  "room_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rooms", force: true do |t|
+    t.string   "name"
+    t.boolean  "is_booked"
+    t.text     "classification"
+    t.integer  "capacity"
+    t.integer  "booking_id"
+    t.integer  "venue_id"
+    t.text     "amenities"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "venues", force: true do |t|
     t.string   "name"

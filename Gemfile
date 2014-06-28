@@ -32,13 +32,7 @@ gem 'spring',        group: :development
 #=======================================#
 
 gem 'bootstrap-sass', '~> 3.2.0'
-gem 'fullcalendar-rails'
-gem 'devise'
-gem 'activeadmin',         github: 'gregbell/active_admin'
-gem 'formtastic'
-gem 'font-awesome-rails'
-gem "paperclip", "~> 4.1"
-gem 'cancan'
+
 
 
 # Use ActiveModel has_secure_password
