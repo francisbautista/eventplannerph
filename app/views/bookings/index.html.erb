@@ -1,0 +1,49 @@
+<h1>Listing bookings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Date reserved</th>
+      <th>Starts at</th>
+      <th>Ends at</th>
+      <th>All day</th>
+      <th>Status</th>
+      <th>Message</th>
+      <th>Expiry date</th>
+      <th>Is viewed</th>
+      <th>All reserved</th>
+      <th>Venue</th>
+      <th>Room</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.title %></td>
+        <td><%= booking.date_reserved %></td>
+        <td><%= booking.starts_at %></td>
+        <td><%= booking.ends_at %></td>
+        <td><%= booking.all_day %></td>
+        <td><%= booking.status %></td>
+        <td><%= booking.message %></td>
+        <td><%= booking.expiry_date %></td>
+        <td><%= booking.is_viewed %></td>
+        <td><%= booking.all_reserved %></td>
+        <td><%= booking.venue_id %></td>
+        <td><%= booking.room_id %></td>
+        <td><%= booking.user_id %></td>
+        <td><%= link_to 'Show', booking %></td>
+        <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
+        <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Booking', new_booking_path %>
