@@ -9,9 +9,9 @@
 
 <header>
     <% if user_signed_in? %>
-    <%= render partial: "signed" %>
+    <%= render partial: "layouts/signed" %>
     <% else %>
-    <%= render :partial => "unsigned" %>
+    <%= render :partial => "layouts/unsigned" %>
     <% end %>
 </header>
 
