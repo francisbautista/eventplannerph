@@ -15,6 +15,23 @@ GIT
       ransack (~> 1.0)
       sass-rails
 
+GIT
+  remote: git://github.com/justinfrench/formtastic.git
+  revision: ee69d3355bd443d40472147a2d087ed4a5b5af9b
+  specs:
+    formtastic (2.3.0.rc3)
+      actionpack (>= 3.2.13)
+
+GIT
+  remote: git://github.com/thoughtbot/paperclip.git
+  revision: 50bfa55270663127a64cac97820d647a746f85d6
+  specs:
+    paperclip (4.1.1)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.3)
+      mime-types
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -76,8 +93,6 @@ GEM
     execjs (2.2.1)
     font-awesome-rails (4.1.0.0)
       railties (>= 3.2, < 5.0)
-    formtastic (2.3.0.rc3)
-      actionpack (>= 3.0)
     fullcalendar-rails (1.6.4.0)
     has_scope (0.6.0.rc)
       actionpack (>= 3.2, < 5)
@@ -106,11 +121,6 @@ GEM
     minitest (5.3.5)
     multi_json (1.10.1)
     orm_adapter (0.5.0)
-    paperclip (4.1.1)
-      activemodel (>= 3.0.0)
-      activesupport (>= 3.0.0)
-      cocaine (~> 0.5.3)
-      mime-types
     polyamorous (1.0.0)
       activerecord (>= 3.0)
     polyglot (0.3.5)
@@ -189,11 +199,11 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   font-awesome-rails
-  formtastic
+  formtastic!
   fullcalendar-rails
   jbuilder (~> 2.0)
   jquery-rails
-  paperclip (~> 4.1)
+  paperclip!
   rails (= 4.1.1)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
