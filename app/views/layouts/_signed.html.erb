@@ -1,0 +1,12 @@
+
+<ul id="signed" class="nav navbar-nav">  
+<li>
+ <%= link_to '<i class="fa fa-cog nav-icon fa-2x" id="set"></i>  <span class="nav-label" id="set">Settings</span>'.html_safe, edit_user_registration_path, id: "set"  %>
+ 
+</li> 
+
+<li>
+ <%= link_to '<i class="fa fa-power-off fa-2x nav-icon" id="out"></i> <span class="nav-label" id="out"> Log Out</span>'.html_safe, destroy_user_session_path, :method => :delete, id: "out"  %>
+            
+</li> 
+</ul> <!--user name-->  

@@ -6,6 +6,15 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
+<header>
+    <% if user_signed_in? %>
+    <%= render partial: "layouts/signed" %>
+    <% else %>
+    <%= render :partial => "layouts/unsigned" %>
+    <% end %>
+</header>
+
 <body>
 
 <%= yield %>
