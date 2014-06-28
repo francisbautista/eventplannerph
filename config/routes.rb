@@ -1,19 +1,17 @@
 Rails.application.routes.draw do
 
-
     get 'pages/index'
 
     %w[index about contact].each do |page|
         get page, controller: 'pages', action: page
     end
 
-    devise_for :suppliers
+    root to: "pages#index"
 
-    devise_for :users
+	devise_for :suppliers
+	devise_for :users
 
-    resources :amenities
-
-
+	resources :amenities
 
 
 	resources :venues do
@@ -23,13 +21,6 @@ Rails.application.routes.draw do
 	end
 
 	resources :pages
-
 	resources :event_types
-
-
-
-	get "/dashboard", to: "pages#dashboard", as: :dashboard
-	root to: "pages#index"
-
 end
 
