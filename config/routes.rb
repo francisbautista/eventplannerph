@@ -1,19 +1,18 @@
 Rails.application.routes.draw do
 
-  get 'pages/index'
+    get 'pages/index'
 
-	%w[index about contact].each do |page|
-	get page, controller: 'pages', action: page
-	end
+    %w[index about contact].each do |page|
+        get page, controller: 'pages', action: page
+    end
 
-	root to: "pages#index"
+    root to: "pages#index"
 
-  devise_for :suppliers
+    devise_for :suppliers
 
-  devise_for :users
+    devise_for :users
 
-  resources :amenities
-
+    resources :amenities
 
     resources :venues do
         resources :rooms do
@@ -22,5 +21,5 @@ Rails.application.routes.draw do
     end
 
 
-	resources :event_types
+    resources :event_types
 end
