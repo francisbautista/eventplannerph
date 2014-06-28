@@ -1,26 +1,26 @@
 Rails.application.routes.draw do
 
-  %w[index about contact].each do |page|
-      get page, controller: 'pages', action: page
-  end
+    get 'pages/index'
 
-  get "/dashboard", to: "pages#dashboard", as: :dashboard
-  root to: "pages#index"
+    %w[index about contact].each do |page|
+        get page, controller: 'pages', action: page
+    end
 
-  devise_for :suppliers
-  devise_for :users
+    root to: "pages#index"
 
-  resources :pages
-  resources :event_types
+	devise_for :suppliers
+	devise_for :users
 
-  resources :amenities
+	resources :amenities
+
+
 	resources :venues do
 		resources :rooms do
 			resources :bookings
 		end
 	end
 
-
-
-
+	resources :pages
+	resources :event_types
 end
+
