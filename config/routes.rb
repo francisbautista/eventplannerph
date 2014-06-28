@@ -1,20 +1,6 @@
 Rails.application.routes.draw do
 
-<<<<<<< HEAD
-    get 'pages/index'
 
-    %w[index about contact].each do |page|
-        get page, controller: 'pages', action: page
-    end
-
-    root to: "pages#index"
-
-    devise_for :suppliers
-
-    devise_for :users
-
-    resources :amenities
-=======
 	devise_for :suppliers
 	devise_for :users
 
@@ -29,7 +15,7 @@ Rails.application.routes.draw do
 
 	resources :pages
 	resources :event_types
->>>>>>> 61b156201c2cadb067262a5c2fa4ce81d3d7973d
+
 
 	%w[index about contact].each do |page|
 		get page, controller: 'pages', action: page
@@ -39,9 +25,6 @@ Rails.application.routes.draw do
 	get "/dashboard", to: "pages#dashboard", as: :dashboard
 	root to: "pages#index"
 
-<<<<<<< HEAD
-    resources :event_types
-=======
->>>>>>> 61b156201c2cadb067262a5c2fa4ce81d3d7973d
+
 end
 
