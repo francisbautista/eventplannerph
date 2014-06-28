@@ -3,4 +3,7 @@ class Supplier < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  # As of version 0.01 Supplier can have many venues
+  has_many :venues
 end
