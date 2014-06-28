@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
+        
+	resources :amenities
+	
+	resources :venues do
+		resources :rooms do
+		    resources :bookings
+		end
+	end
 
-  resources :bookings
-  resources :rooms
-  resources :venues
 
-
+	resources :event_types
 end
