@@ -35,9 +35,9 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'fullcalendar-rails'
 gem 'devise'
 gem 'activeadmin',         github: 'gregbell/active_admin'
-gem 'formtastic'
+gem 'formtastic',           github: 'justinfrench/formtastic'
 gem 'font-awesome-rails'
-gem "paperclip", "~> 4.1"
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'cancan'
 
 
