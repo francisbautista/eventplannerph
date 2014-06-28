@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140628073720) do
+=======
+ActiveRecord::Schema.define(version: 20140628075337) do
+>>>>>>> f85469cd760681838409d4a872f449b637b66ee2
 
   create_table "amenities", force: true do |t|
     t.string   "name"
@@ -55,6 +59,52 @@ ActiveRecord::Schema.define(version: 20140628073720) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "suppliers", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.string   "username"
+    t.string   "company_name"
+    t.string   "address"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "mobile"
+    t.integer  "telephone"
+    t.text     "profile_picture"
+    t.date     "birthday"
+    t.integer  "venue_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "suppliers", ["email"], name: "index_suppliers_on_email", unique: true
+  add_index "suppliers", ["reset_password_token"], name: "index_suppliers_on_reset_password_token", unique: true
+
+  create_table "users", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
   create_table "venues", force: true do |t|
     t.string   "name"
