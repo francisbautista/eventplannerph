@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20140628073720) do
-=======
 ActiveRecord::Schema.define(version: 20140628075337) do
->>>>>>> f85469cd760681838409d4a872f449b637b66ee2
 
   create_table "amenities", force: true do |t|
     t.string   "name"
@@ -99,6 +95,13 @@ ActiveRecord::Schema.define(version: 20140628075337) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "username"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "mobile"
+    t.integer  "telephone"
+    t.text     "profile_picture"
+    t.date     "birthday"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

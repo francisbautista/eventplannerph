@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 	end
 
 	get 'pages/index'
+	get "/dashboard", to: "pages#dashboard", as: :dashboard
 	root to: "pages#index"
 
 end
