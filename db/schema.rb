@@ -95,6 +95,13 @@ ActiveRecord::Schema.define(version: 20140628075337) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "username"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "mobile"
+    t.integer  "telephone"
+    t.text     "profile_picture"
+    t.date     "birthday"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
