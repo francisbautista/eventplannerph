@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :assets
+
     get 'pages/index'
    	get "/dashboard", to: "pages#dashboard", as: :dashboard
 
