@@ -2,6 +2,7 @@ class Venue < ActiveRecord::Base
 
   # Model Relations-----------------#
   belongs_to :supplier
+  has_many :assets, as: :uploadable
 
   # Venue Classification Types:
   # Pull validations from this method
