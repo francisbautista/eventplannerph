@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :assets
+
     get 'pages/index'
+   	get "/dashboard", to: "pages#dashboard", as: :dashboard
 
     %w[index about contact].each do |page|
         get page, controller: 'pages', action: page

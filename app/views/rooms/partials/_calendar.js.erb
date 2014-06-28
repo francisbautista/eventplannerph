@@ -133,3 +133,74 @@ function doSubmit(){
 }
 </script>
 </div>
+
+
+<div id="createEventModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+<div class="modal-dialog-small">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+<h3 class="modal-title" id="myModalLabel1">Booking</h3>
+</div>
+
+<div class="modal-body">
+
+
+
+<%= semantic_form_for([@venue, @room, @booking]) do |f| %>
+<%= f.inputs do %>
+<div class="col-sm-12 field">
+<%= f.input :user_id, :as => :hidden, :value => current_user.id %>
+<%= f.label :event_name %>
+<%= f.input :title, :label=>false, :required=>true %>
+</div>
+<div class="col-sm-6 field">
+<%= f.label :starts_at %> <p id="starttime"></p>
+<%#= f.input :starts_at, :as => :datetime_select }%>
+</div>
+
+
+
+<div class="col-sm-6 field">
+<%= f.label :ends_at %> <p id="endtime"></p>
+</div>
+
+<!-- <div class="col-sm-12 field">
+<%= f.label :all_day %>
+<%= f.input :all_day, :as => :boolean, :label=>false %>
+</div>
+-->
+
+<div class="col-sm-12 field">
+<%= f.label :message %>
+<%= f.input :message, :as => :text, :label=>false %>
+<hr>
+</div>
+
+<div class="col-sm-6">
+
+<%= f.submit "Create Booking", :class => "btn btn-success btn-xxl pull-right margin-bot pull-right" %>
+
+</div>
+<% end %>
+<% end %>
+<div class="col-sm-6">
+<button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+</div>
+
+
+
+</div>
+
+
+
+
+<!--
+<div class="modal-footer">
+<button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+<button type="submit" class="btn btn-primary" id="submitButton">Save</button>
+</div>
+-->
+</div>
+</div>
+</div>
