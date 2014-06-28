@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  address: MyString
+  classification: MyString
+  capacity: MyString
+  is_featured: false
+  location: MyText
+  environment: MyText
+  comments: MyText
+  rates: MyText
+  contact_persons: MyText
+  contact_numbers: MyText
+  status: false
+  booking_count: 1
+  caterers: MyText
+  policy: MyText
+  is_booked: false
+  freeroom_count: 1
+  email: MyString
+  user_id: 1
+
+two:
+  name: MyString
+  address: MyString
+  classification: MyString
+  capacity: MyString
+  is_featured: false
+  location: MyText
+  environment: MyText
+  comments: MyText
+  rates: MyText
+  contact_persons: MyText
+  contact_numbers: MyText
+  status: false
+  booking_count: 1
+  caterers: MyText
+  policy: MyText
+  is_booked: false
+  freeroom_count: 1
+  email: MyString
+  user_id: 1

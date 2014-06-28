@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @booking.title %>
+</p>
+
+<p>
+  <strong>Date reserved:</strong>
+  <%= @booking.date_reserved %>
+</p>
+
+<p>
+  <strong>Starts at:</strong>
+  <%= @booking.starts_at %>
+</p>
+
+<p>
+  <strong>Ends at:</strong>
+  <%= @booking.ends_at %>
+</p>
+
+<p>
+  <strong>All day:</strong>
+  <%= @booking.all_day %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @booking.status %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @booking.message %>
+</p>
+
+<p>
+  <strong>Expiry date:</strong>
+  <%= @booking.expiry_date %>
+</p>
+
+<p>
+  <strong>Is viewed:</strong>
+  <%= @booking.is_viewed %>
+</p>
+
+<p>
+  <strong>All reserved:</strong>
+  <%= @booking.all_reserved %>
+</p>
+
+<p>
+  <strong>Venue:</strong>
+  <%= @booking.venue_id %>
+</p>
+
+<p>
+  <strong>Room:</strong>
+  <%= @booking.room_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @booking.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_booking_path(@booking) %> |
+<%= link_to 'Back', bookings_path %>

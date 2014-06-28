@@ -1,0 +1,61 @@
+<h1>Listing venues</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Classification</th>
+      <th>Capacity</th>
+      <th>Is featured</th>
+      <th>Location</th>
+      <th>Environment</th>
+      <th>Comments</th>
+      <th>Rates</th>
+      <th>Contact persons</th>
+      <th>Contact numbers</th>
+      <th>Status</th>
+      <th>Booking count</th>
+      <th>Caterers</th>
+      <th>Policy</th>
+      <th>Is booked</th>
+      <th>Freeroom count</th>
+      <th>Email</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @venues.each do |venue| %>
+      <tr>
+        <td><%= venue.name %></td>
+        <td><%= venue.address %></td>
+        <td><%= venue.classification %></td>
+        <td><%= venue.capacity %></td>
+        <td><%= venue.is_featured %></td>
+        <td><%= venue.location %></td>
+        <td><%= venue.environment %></td>
+        <td><%= venue.comments %></td>
+        <td><%= venue.rates %></td>
+        <td><%= venue.contact_persons %></td>
+        <td><%= venue.contact_numbers %></td>
+        <td><%= venue.status %></td>
+        <td><%= venue.booking_count %></td>
+        <td><%= venue.caterers %></td>
+        <td><%= venue.policy %></td>
+        <td><%= venue.is_booked %></td>
+        <td><%= venue.freeroom_count %></td>
+        <td><%= venue.email %></td>
+        <td><%= venue.user_id %></td>
+        <td><%= link_to 'Show', venue %></td>
+        <td><%= link_to 'Edit', edit_venue_path(venue) %></td>
+        <td><%= link_to 'Destroy', venue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Venue', new_venue_path %>
