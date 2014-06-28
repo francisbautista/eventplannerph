@@ -14,5 +14,13 @@ Rails.application.routes.draw do
 
 	resources :pages
 	resources :event_types
-	root to: "pages#index"
+
+	%w[index about contact].each do |page|
+		get page, controller: 'pages', action: page
 	end
+
+	get 'pages/index'
+	root to: "pages#index"
+
+end
+
