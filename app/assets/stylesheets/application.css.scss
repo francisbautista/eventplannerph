@@ -92,6 +92,21 @@ h1, h2, h3 {
 	margin-top: 70px;
 }
 
+.form-wide {
+  width: 600px;
+  margin: 0 auto;  
+}
+
+.form-med {
+  width: 480px;
+  margin: 0 auto;
+}
+
+.center {
+  margin: 0 auto;
+  width: 100px;
+}
+
 .landingbox {
 	width: 100%;
 	border: 1px #898989 solid;
@@ -376,8 +391,12 @@ This stylesheet forms part of the Formtastic Rails Plugin
 /* INLINE HINTS
 --------------------------------------------------------------------------------------------------*/
 .formtastic .input .inline-hints {
-  color:#666;
-  margin:0.5em 0 0 25%;
+    color: rgb(102, 102, 102);
+    margin: 0.5em 0px 0px 0;
+    background-color: #e9e9e9;
+    padding: 5px;
+    padding-left: 10px;
+    opacity: 0.6;
 }
 
 

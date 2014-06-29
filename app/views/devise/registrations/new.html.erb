@@ -1,7 +1,8 @@
 <div class="content container">
 <div class="panel panel-info">
 	<div class="panel-heading">
-        	<center><h1>Sign Up</h1></center>
+        	<h1>Sign Up</h1>
+        	<h4>Get ready to start planning your events!</h4>
       </div>
       <div class="panel-body">
 
@@ -14,14 +15,14 @@
 			<div class="col-md-12">
 				<h3> Login Details </h3>
 			</div>
-			<div class="col-md-4">
-				EMAIL <%= f.input :email, :required => true, :autofocus => true, :label=>false %>
+			<div class="col-md-8">
+				EMAIL <%= f.input :email, :required => true, :autofocus => true, :label=>false,:value=>"Email" %>
 			</div>
-			<div class="col-md-4">
-		    	PASSWORD <%= f.input :password, :required => true, length: { in: 6..20 }, :label=>false, :hint=>"Must contain letters, numbers and special characters"%>
+			<div class="col-md-8">
+		    	PASSWORD <%= f.input :password, :required => true, length: { in: 6..20 }, :label=>false, :hint=>"Must contain letters, numbers and special characters",:value=>"Password"%>
 		    </div>
-			<div class="col-md-4">
-		    	CONFIRM PASSWORD <%= f.input :password_confirmation, :required => true, length: { in: 6..20 }, :label=>false%>
+			<div class="col-md-8">
+		    	CONFIRM PASSWORD <%= f.input :password_confirmation, :required => true, length: { in: 6..20 }, :label=>false,:value=>"Confirm Password"%>
 			</div>
 			<div class="col-md-12">
 				<hr>
@@ -34,9 +35,9 @@
 		<div class="row-fluid">
 			<div class="col-md-12">
 				<h3> Personal Details </h3>
+				<hr>
 
-				
-				
+
 			</div>
 		</div>
 

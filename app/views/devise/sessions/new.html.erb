@@ -1,17 +1,41 @@
-<h2>Sign in</h2>
+<div class="content container">
+<div class="panel panel-danger form-wide">
+	<div class="panel-heading">
+        	<center><h1>Sign In</h1></center>
+      </div>
+      <div class="panel-body">
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+       <h3><center>Welcome back!</center></h3>
 
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+<%= semantic_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+ 
+<div class="row-fluid form-med">
+	<div class="col-md-12">
+		
+  		<%= f.input :email, autofocus: true, :label=>false, :placeholder => "Email" %>
+  	</div>
 
+  	<div class="col-md-12">
+		
+		<%= f.input :password, autocomplete: "off", :label=>false, :placeholder => "Password" %>
+	</div>
+
+
+  <div class="col-md-12">
   <% if devise_mapping.rememberable? -%>
     <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
   <% end -%>
 
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
+<br>
+  <div class="center"><%= f.action :submit, :button_html => { :value => "Log in", :class => "btn btn-danger"}%>
+    <% end %>
+      
+   
+  </div>
 
-<%= render "devise/shared/links" %>
+</div> <!-- col-12 --> 
+  </div> <!-- row fluid -->
+</div> <!--content-->
+
+</div> <center>
+    <%= render "devise/shared/links" %> </center>
