@@ -1,18 +1,44 @@
+<div class="col-md-12">
+<div class="container-960 wrapper-add-element">
+<div class="row padding-3em" style="padding-top: 3em; padding-bottom: 3em;"> 
+
+
 <h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<hr>
+<%= semantic_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+	<%= f.inputs do%>
+  <div class="form-inputs">
+    <%= f.input :email, :required => true, :autofocus => true %>
+    <%= f.input :password, :required => true, length: { in: 6..20 }%>
+    <%= f.input :password_confirmation, :required => true, length: { in: 6..20 } %>
+    <%= f.input :first_name, :required => true %>
+    <%= f.input :last_name, :required => true %>
+    <%= f.input :mobile, :required => true %>
+    <%= f.input :telephone, :required => true %>
+    <%= f.input :is_supplier, allow_nil: true %>
+    <%= f.input :birthday, :required => true %>
+  </div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+<center>
+  <br>
+  <hr>
+    <% end %>
+  
+    <%= f.button :submit%>
+        
+ <%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %>
+<%= content_tag(:div, flash[:notice], :id => "flash_notice") if flash[:notice] %>
+<%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %>
 
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
-
-  <div><%= f.submit "Sign up" %></div>
 <% end %>
 
+<br><br>
+<div class="renderlink">
+Already have an account? 
 <%= render "devise/shared/links" %>
+
+
+</div> <!--index-venue-->
+</div> <!--container -->
+</div> <!--col-md-12-->
