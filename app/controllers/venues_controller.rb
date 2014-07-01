@@ -1,4 +1,5 @@
 class VenuesController < ApplicationController
+  # before_filter :authenticate_user!
   before_action :set_venue, only: [:show, :edit, :update, :destroy]
 
   # Index function displays all venues for catalog
@@ -8,7 +9,6 @@ class VenuesController < ApplicationController
 
   # Show function isolates venue for show view
   def show
-    @venue = Venue.find(params[:id])
     @uploadable=@venue
     @assets = @uploadable.assets
 
@@ -26,7 +26,6 @@ class VenuesController < ApplicationController
 
   # Edit function edits a model instance
   def edit
-    @venue = Venue.find(params[:id])
     @user = User.find(current_user)
 
     @uploadable = @venue
