@@ -1,2 +1,2 @@
-class BookingsController < InheritedResources::Base
+class BookingsController < ApplicationController
 end

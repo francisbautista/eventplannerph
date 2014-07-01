@@ -1,2 +1,2 @@
-class RoomsController < InheritedResources::Base
+class RoomsController < ApplicationController
 end
