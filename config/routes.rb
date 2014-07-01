@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
 
 	resources :venues do
+    resources :assets
 		resources :rooms do
 			resources :bookings
 		end
@@ -26,4 +27,3 @@ Rails.application.routes.draw do
 	resources :pages
 	resources :event_types
 end
-
