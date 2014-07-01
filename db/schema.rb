@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20140628100400) do
   end
 
   create_table "assets", force: true do |t|
+    t.integer  "uploadable_id"
+    t.string   "uploadable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "photo_file_name"
@@ -104,6 +106,13 @@ ActiveRecord::Schema.define(version: 20140628100400) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "username"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "mobile"
+    t.integer  "telephone"
+    t.text     "profile_picture"
+    t.date     "birthday"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
