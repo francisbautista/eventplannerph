@@ -26,7 +26,7 @@ class VenuesController < ApplicationController
 
   # Edit function edits a model instance
   def edit
-    @user = User.find(current_user)
+    # @user = User.find(current_user)
 
     @uploadable = @venue
     @assets = @uploadable.assets
