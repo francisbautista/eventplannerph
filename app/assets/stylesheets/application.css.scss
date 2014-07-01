@@ -10,13 +10,15 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
  *= require fullcalendar
+ *= require font-awesome
+ *= require_tree .
  */
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import "font-awesome";
 
 
 /* GLOBAL VARIABLES
@@ -521,4 +523,104 @@ This stylesheet forms part of the Formtastic Rails Plugin
 
 .short-form {
   max-width: 1000px;
+}
+
+/* DASHBOARD
+--------------------------------------------------------------------------------------------------*/
+.fa-account-type > #venue-provider{
+	background-color: rgba(62, 200, 230, 0.75);
+}
+
+.fa-account-type > #event-planner{
+	background-color: rgba(255, 103, 89, 0.75);
+}
+
+
+.btn-default-gray {
+  background-color: #bbb;
+  border-color: #bbb;
+}
+
+.dashboard-wrapper{
+  /*background-color: rgb(249, 234, 192);*/
+  background-color: rgba(255, 255, 245, 0.5);
+  min-height: 500px;
+  padding: 1.5em;
+}
+
+.account-info {
+ /* background-color: rgb(247, 226, 170);*/
+ padding: 1em 0 1em 0;
+ /*  padding: 0.75em 1em 0.3em 1em;
+ min-height: 5.5em;*/
+ margin-bottom: 0.5em;
+ min-height: 4.3em;
+ background-color: transparent!important;
+}
+
+.account-type-wrapper > td > .account-name{
+  font-size: 1.5em;
+  line-height: 1.5em;
+  font-family: 'Cabin', sans-serif;
+  opacity: 1;
+  position: absolute;
+  transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -oz-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+}
+
+.account-type-wrapper > td > #venue-provider-label,
+.account-type-wrapper > td > #event-planner-label{
+  font-weight: normal;
+  opacity: 0;
+  font-size: 1em;
+  line-height: 1.5em;
+  cursor: none;
+  transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -oz-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+
+
+}
+
+.account-type-wrapper > #venue-provider-label{
+  background-color: rgba(62, 200, 230, 0.75);
+}
+
+.account-type-wrapper > #event-planner-label{
+  background-color: rgba(255, 103, 89, 0.75);
+}
+
+
+
+.account-type-wrapper > td > span > #account-type{
+  font-size: 1em;
+  right: 0;
+  color: $white;
+  font-weight: 700;
+
+}
+
+.fa-gray{
+  font-size: 1.75em;
+  color: rgba(89, 89, 89, 0.5);
+  transition: color 0.35s;
+  -webkit-transition: color 0.35s;
+  -moz-transition: color 0.35s;
+  -o-transition: color 0.35s;
+}
+
+.fa-vp{
+  color: rgba(62, 200, 230, 0.95);
+}
+
+.fa-ep{
+  color: rgba(255, 103, 89, 0.95);
+}
+
+.fa-gray:hover, .fa-orange:hover{
+  /*color: rgba(89, 89, 89, 0.95); */
+  color: rgb(249, 209, 97);
 }
