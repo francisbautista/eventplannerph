@@ -15,6 +15,8 @@ class AssetsController < ApplicationController
     @asset = @uploadable.assets.new
   end
 
+  # Show function presents asset to uploadable
+  # type in show view
   def show
     @asset = Asset.find(params[:id])
     @assets = @uploadable.assets
@@ -24,6 +26,7 @@ class AssetsController < ApplicationController
     end
   end
 
+  # New function creates a new assets per model
   def new
     @asset = @uploadable.assets.new
   end
@@ -55,6 +58,7 @@ class AssetsController < ApplicationController
   # end
 
 
+  # Destroy function releases Asset
   def destroy
     @asset = Asset.find(params[:id])
     @asset.photo.destroy
