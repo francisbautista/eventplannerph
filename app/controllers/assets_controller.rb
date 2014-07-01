@@ -57,7 +57,6 @@ class AssetsController < ApplicationController
   # def update
   # end
 
-
   # Destroy function releases Asset
   def destroy
     @asset = Asset.find(params[:id])
@@ -66,6 +65,7 @@ class AssetsController < ApplicationController
     redirect_to :back
   end
 
+  #=====================================================================#
   private
   # Some strong params for whitelisting
   def asset_params
