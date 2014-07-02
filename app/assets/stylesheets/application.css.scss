@@ -69,6 +69,10 @@ body {
 
 }
 
+button {
+	outline: none;
+}
+
 h1, h2, h3 {
 	font-family: 'Cabin', sans-serif;
 	font-weight: bold;
@@ -528,57 +532,39 @@ This stylesheet forms part of the Formtastic Rails Plugin
 /* CUSTOMIZE THE NAVBAR
 ---------------------------------------------------------------------------------------------- */
 
-.navbar-inverse {
+.navbar {
   background-color: none;
-  color: rgba(158,158,158,1);
+  color: rgb(158,158,158);
   font-weight: normal;
   text-decoration: none;
+  max-height: 68px;
+  border: none;
+  padding-right: 1em;
 }
 
-.navbar-inverse .navbar-nav > .active > a {
+.navbar .navbar-nav > li >  a{
+	color: $gray;
+}
+
+.navbar .navbar-nav > .active > a {
   background-color: none;
   color: $salmon;
   font-weight: bold;
   text-decoration: none;
 }
 
-.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover,
-.navbar-inverse .navbar-nav > .active > a:focus {
+.navbar .navbar-nav > .active > a:hover{
   color: white;
   background-color: $salmon;
 }
 
 
-.navbar-inverse .navbar-nav > li > a:hover {
-  color: white;
-}
-
-
-
-.navbar {
-  max-height: 68px;
-
-  border: none;
-}
-
 .nav{
   padding-left: 0;
   padding-right: 0;
-
 }
 
 
-
-.container > .navbar-header, .container > .navbar-collapse {
- // margin-top: 10px;
-}
-
-
-#nav.navbar.navbar-inverse.navbar-fixed-top.no-padding {
-  background-color: $white;
-  border-bottom: none;
-  top: 0px;
-}
 
 /*
 .navbar-inverse .navbar-nav > li > a{
@@ -588,11 +574,11 @@ This stylesheet forms part of the Formtastic Rails Plugin
     width: 100%;
 }
 */
-.navbar-inverse .navbar-nav > li > a:hover{
+.navbar .navbar-nav > li > a:hover{
   background-color: $navhover;
   color: $white;
 }
-.navbar-inverse .navbar-nav > li > a.active{
+.navbar .navbar-nav > li > a.active{
   background-color: $salmon;
   color: $white;
 }
@@ -607,144 +593,47 @@ This stylesheet forms part of the Formtastic Rails Plugin
   width: 100%;
 }
 
-@media (max-width: 990px){
-  .container {
-    max-width: 100%;
-  }
-
-
-
-}
-
-.row {
-  background-color: $white;
-}
-
-.row-clear{
-  background-color: transparent;
-  margin-right: 0;
-  padding-right: 0;
-
-}
-
-
-.navbar-collapse.in {
-  overflow-y: visible;
-}
-
-.user-nav{
-  right: 0;
-}
-
-.navbar-inverse .navbar-collapse .collapse{
-  padding: 0;
-  border-top: 0;
-}
-
-.navbar .navbar-inverse .navbar-fixed-top .no-padding{
-  height: 0;
-}
-
-.navbar-inverse .navbar-collapse {
-  padding-top: 0;
-  padding-bottom: 0;
-  border-top: 0;
-
-}
-
-
-.navbar-inverse .navbar-nav {
-  z-index: 999;
-}
-
-
-.navbar-inverse .navbar-nav > .open > a{
-  background-color: $white;
-  color: #999;
-}
-
-.navbar-inverse .navbar-nav > .open > a:hover,
-.navbar-inverse .navbar-nav > .open > a:focus {
-  background-color: $salmon;
-}
-
-
-.navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover{
-  background-color: $navhover;
-  color: #aaa;
-
-}
-.navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus,
-.navbar-inverse .navbar-nav .open .dropdown-menu > li > a.active{
-  color: $salmon;
-  background-color: transparent;
-}
-
-
-
 
 
 
 @media (min-width: 767px){
 
-  .navbar-inverse .navbar-nav,
-  .navbar-inverse .navbar-nav > li > a{
-    height: 68px;
-  }
-
-
-  .navbar-inverse .navbar-nav > li > a{
-    padding-top: 1.2em;
-    transition: all 0.3s;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -o-transition: all 0.3s;
+	.navbar .navbar-nav,
+	.navbar .navbar-nav > li > a{
+		height: 68px;
 	}
 
-  .navbar-nav > li > .dropdown-menu {
-    margin-top: -1px;
-  }
+
+	.navbar .navbar-nav > li > a{
+		padding-top: 1.5em;
+		transition: all 0.3s;
+		-webkit-transition: all 0.3s;
+		-moz-transition: all 0.3s;
+		-o-transition: all 0.3s;
+	}
+
+	.navbar-nav > li > button {
+		margin-top: 1em;
+	}
+
+	.navbar-nav > li > .dropdown-menu {
+		margin-top: -1px;
+		width: 400px;
+	}
+
+	.main-nav {
+		float: right;
+	}
+
+	.navbar-nav > #sign-up-li > .dropdown-menu{
+		right: 0;
+		left: auto;
+	}
+
+
+
 
 }
-
-@media (max-width: 767px){
-
-  .navbar-inverse .navbar-nav > li > a{
-    padding-top: 0.7em;
-    transition: all 0.3s;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -o-transition: all 0.3s;
-  }
-  .navbar-inverse .navbar-nav > li > a > .nav-label{
-    display: inline-block;
-    font-size: 1.2em;
-    text-align: right;
-  }
-
-  .navbar-inverse .navbar-nav > li > a > .nav-icon{
-    font-size: 1.2em ;
-  }
-}
-
-
-
-.navbar-inverse .navbar-toggle{
-  background-color: $salmon;
-  border: none;
-  margin-top: 20px;
-
-}
-.navbar-inverse .navbar-toggle:hover,
-.navbar-inverse .navbar-toggle:focus {
-  background-color: $salmon;
-}
-
-.main-nav a {
-  text-decoration: none;
-}
-
-
 
 /* DASHBOARD
 --------------------------------------------------------------------------------------------------*/
