@@ -534,18 +534,22 @@ This stylesheet forms part of the Formtastic Rails Plugin
 ---------------------------------------------------------------------------------------------- */
 
 .navbar {
-  background-color: none;
+  background-color: $white;
   color: rgb(158,158,158);
   font-weight: normal;
   text-decoration: none;
   max-height: 68px;
   border: none;
   padding-right: 1em;
+  z-index: 999;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.175);
 }
 
 .navbar .navbar-nav > li >  a{
 	color: $gray;
 }
+
 
 .navbar .navbar-nav > .active > a {
   background-color: none;
@@ -647,10 +651,15 @@ This stylesheet forms part of the Formtastic Rails Plugin
 		left: auto;
 		border-radius: 0;
 		margin: -1px;
+
 	}
 
 	.navbar-nav > li > #sign-up-dropdown{
 		margin-top: 1.2em;
+	}
+
+	.navbar-nav > li > #log-in-dropdown{
+		margin-top: 0.07em;
 	}
 
 	.navbar-nav > li > .dropdown-menu > div > .button-dropdown > a{
@@ -664,8 +673,8 @@ This stylesheet forms part of the Formtastic Rails Plugin
 	.button-dropdown{
 		height: 50px;
 		padding: 0.4em;
-		
-
+		text-align: center;
+		z-index: 9;
 	}
 
 	.navbar-nav > li > .dropdown-menu > div > #event-planner{
