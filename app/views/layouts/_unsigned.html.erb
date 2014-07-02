@@ -24,12 +24,16 @@
             						<li class="dropdown">
               						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Log In</span></a>
               							<div class="dropdown-menu" role="menu">
-              								  <div class="col-lg-6" id="event-planner">
-    		                         <%= link_to "I'm a Event<br> Planner".html_safe, new_user_session_path, id: "log-in"  %>       
+              								  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                   <div class="button-dropdown" id="event-planner">
+    		                         <%= link_to "<h4>Event Planner</h4>".html_safe, new_user_session_path, id: "log-in"  %>   
+                                  </div>    
     		                       </div>
 
-    		                       	<div class="col-lg-6" id="venue-provider">
-    		                         <%= link_to "I'm a Venue<br> Provider".html_safe, new_supplier_session_path, id: "log-in"  %>    
+    		                       	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                  <div class="button-dropdown" id="venue-provider">
+    		                         <%= link_to "<h4>Venue Provider</h4>".html_safe, new_supplier_session_path, id: "log-in"  %>    
+                                 </div>
     		                       	</div>
 
               							</div><!--dropdown menu-->
@@ -37,14 +41,17 @@
 
                         <li class="dropdown" id="sign-up-li">
                         <button class="dropdown-toggle btn btn-danger" data-toggle="dropdown" id="sign-up">Sign Up!</button>
-                          <div class="dropdown-menu" role="menu">
-                            <div class="col-lg-6" id="event-planner">
-                               <%= link_to "I want to book a venue!".html_safe, new_user_registration_path, id: "create-new"  %>
-                               
+                          <div class="dropdown-menu" role="menu" id ="sign-up-dropdown">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                              <div class="button-dropdown" id="event-planner">
+                               <%= link_to "<h4>Book a venue!</h4>".html_safe, new_user_registration_path, id: "create-new"  %>
+                               </div>
                              </div> 
 
-                            <div class="col-lg-6" id="venue-provider">
-                               <%= link_to 'I can provide a venue!'.html_safe, new_supplier_registration_path, id: "log-in"  %>    
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                              <div class="button-dropdown" id="venue-provider">
+                               <%= link_to '<h4>Provide a venue!</h4>'.html_safe, new_supplier_registration_path, id: "log-in"  %>  
+                               </div>  
                             </div>
 
                           </div><!--dropdown menu-->
