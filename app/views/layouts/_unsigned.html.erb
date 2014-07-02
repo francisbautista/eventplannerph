@@ -20,35 +20,34 @@
                       <!--main-nav-->
                       <div class="main-nav">
 
-                      <ul id="unsigned" class="nav navbar-nav pull-right">              
+                      <ul id="unsigned" class="nav navbar-nav">              
             						<li class="dropdown">
               						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Log In <span class="caret"></span></a>
-              							<ul class="dropdown-menu" role="menu">
-              							Are you a
-              								<li>
-    		                         <%= link_to '<i class="fa fa-sign-in nav-icon fa-2x" id="log-in"></i>  <span class="nav-label" id="log-in">Event Planner?</span>'.html_safe, new_user_session_path, id: "log-in"  %>       
-    		                       </li>
+              							<div class="dropdown-menu" role="menu">
+              								  <div class="col-lg-6" id="event-planner">
+    		                         <%= link_to 'Event<br> Planner'.html_safe, new_user_session_path, id: "log-in"  %>       
+    		                       </div>
 
-    		                       	<li>
-    		                         <%= link_to '<i class="fa fa-sign-in nav-icon fa-2x" id="log-in"></i>  <span class="nav-label" id="log-in">Venue Provider?</span>'.html_safe, new_supplier_session_path, id: "log-in"  %>    
-    		                       	</li>
+    		                       	<div class="col-lg-6" id="venue-provider">
+    		                         <%= link_to 'Venue<br> Provider'.html_safe, new_supplier_session_path, id: "log-in"  %>    
+    		                       	</div>
 
-              							</ul><!--dropdown menu-->
+              							</div><!--dropdown menu-->
               						</li>
 
                         <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign Up <span class="caret"></span></a>
-                          <ul class="dropdown-menu pull-right" role="menu">
-                            <li class="col-lg-6" id="event-planner">
+                          <div class="dropdown-menu" role="menu">
+                            <div class="col-lg-6" id="event-planner">
                                <%= link_to 'Event<br> Planner'.html_safe, new_user_registration_path, id: "create-new"  %>
                                
-                             </li> 
+                             </div> 
 
-                              <li class="col-lg-6" id="venue-provider">
+                            <div class="col-lg-6" id="venue-provider">
                                <%= link_to 'Venue<br> Provider'.html_safe, new_supplier_registration_path, id: "log-in"  %>    
-                              </li>
+                            </div>
 
-                          </ul><!--dropdown menu-->
+                          </div><!--dropdown menu-->
                         </li>    
 
                       </ul> <!--unsigned-->  
