@@ -10,13 +10,15 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
  *= require fullcalendar
+ *= require font-awesome
+ *= require_tree .
  */
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import "font-awesome";
 
 
 /* GLOBAL VARIABLES
@@ -65,6 +67,10 @@ body {
 	background-color: $white;
 	font-family: 'Open Sans', sans-serif;
 
+}
+
+button {
+	outline: none;
 }
 
 h1, h2, h3 {
@@ -125,6 +131,7 @@ h1, h2, h3 {
 
 .btn {
 	border-radius: 0px;
+	border: 0;
 	width: 100px;
 	margin: 5px;
 }
@@ -522,3 +529,699 @@ This stylesheet forms part of the Formtastic Rails Plugin
 .short-form {
   max-width: 1000px;
 }
+
+/* CUSTOMIZE THE NAVBAR
+---------------------------------------------------------------------------------------------- */
+
+.navbar {
+  background-color: $white;
+  color: rgb(158,158,158);
+  font-weight: normal;
+  text-decoration: none;
+  max-height: 68px;
+  border: none;
+  padding-right: 1em;
+  z-index: 999;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.175);
+}
+
+.navbar .navbar-nav > li >  a{
+	color: $gray;
+}
+
+
+.navbar .navbar-nav > .active > a {
+  background-color: none;
+  color: $salmon;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar .navbar-nav > .active > a:hover{
+  color: white;
+  background-color: $salmon;
+}
+
+
+.nav{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
+
+.navbar .navbar-nav > li > a:hover{
+  color: $salmon;
+  background-color: $white;
+}
+.navbar .navbar-nav > li > a.active{
+  color: $salmon;
+  background-color: $white;
+}
+
+.navbar-nav > .active > a {
+  background-color: none;
+  color: $salmon;
+}
+
+.navbar-nav > .open > a{
+  background-color: $white;
+  color: #999;
+}
+
+.navbar-nav > .open > a:hover,
+.navbar-nav > .open > a:focus {
+  background-color: $white;
+  color: $salmon;
+}
+
+
+.navbar-nav .open .dropdown-menu > li > a:hover{
+  background-color: $navhover;
+  color: #aaa;
+
+}
+
+
+
+#navbar-wrapper {
+  position: relative;
+  z-index: 10;
+  height: 68px;
+}
+
+#nav-container{
+  width: 100%;
+}
+
+
+
+
+@media (min-width: 767px){
+
+	.navbar .navbar-nav,
+	.navbar .navbar-nav > li > a{
+		height: 68px;
+	}
+
+
+	.navbar .navbar-nav > li > a{
+		padding-top: 1.5em;
+		transition: all 0.3s;
+		-webkit-transition: all 0.3s;
+		-moz-transition: all 0.3s;
+		-o-transition: all 0.3s;
+	}
+
+	.navbar-nav > li > button {
+		margin-top: 1em;
+	}
+
+	.navbar-nav > li > .dropdown-menu {
+		width: 400px;
+	}
+
+	.main-nav {
+		float: right;
+	}
+
+	#signed > li {
+		margin-top: -0.5em;
+
+	}
+
+	.navbar-nav > li > .dropdown-menu{
+		right: 0;
+		left: auto;
+		border-radius: 0;
+		margin: -1px;
+
+	}
+
+	.navbar-nav > li > #sign-up-dropdown{
+		margin-top: 1.25em;
+	}
+
+	.navbar-nav > li > #log-in-dropdown{
+		margin-top: 0.07em;
+	}
+
+	.navbar-nav > li > .dropdown-menu > div > .button-dropdown > a{
+		color: $white
+	}
+
+	.navbar-nav > li > .dropdown-menu > div > .button-dropdown > a:hover{
+		text-decoration: none; 
+	}
+
+	.button-dropdown{
+		height: 50px;
+		padding: 0.4em;
+		text-align: center;
+		z-index: 9;
+	}
+
+	.navbar-nav > li > .dropdown-menu > div > #event-planner{
+		background-color: $lblue;
+		margin: 0.4em 0 0.5em 0.5em;
+	}
+
+	.navbar-nav > li > .dropdown-menu > div > #venue-provider{
+		background-color: $salmon;
+		margin: 0.4em  0.5em 0.5em 0;
+	}
+
+	.navbar-inverse .navbar-nav > li > a{
+	    padding-top: 1.2em;
+	    transition: all 0.3s;
+	    -webkit-transition: all 0.3s;
+	    -moz-transition: all 0.3s;
+	    -o-transition: all 0.3s;
+  	}
+  	.navbar-nav .open .dropdown-menu > li > a{
+	    height: 50px;
+	    border-bottom: 1px solid $cream;
+  	}
+
+	.navbar-nav > li > .dropdown-menu {
+	    margin-top: -1px;
+	  }
+
+	.navbar-nav > li > a > i{
+	    display: block;
+	    color: rgba(87, 94, 92, 0.6);
+	    margin: 0.1em 0.5em 0 0.5em;
+	    transition: margin 0.2s ease-in-out;
+	    -webkit-transition: margin 0.2s ease-in-out;
+	    -moz-transition: margin 0.2s ease-in-out;
+	    -o-transition: margin 0.2s ease-in-out;
+	  }
+
+	.navbar-nav > li > a > i#dashboard{
+	    margin: 0.1em .9em 0 .9em;
+	   	transition: margin 0.2s ease-in-out;
+	    -webkit-transition: margin 0.2s ease-in-out;
+	    -moz-transition: margin 0.2s ease-in-out;
+	    -o-transition: margin 0.2s ease-in-out;
+	}
+
+	.navbar-nav > li > a:hover > .nav-icon{
+	    margin: 0 0.5em 0 0.5em;
+	    color: $salmon;
+	  }
+	.navbar-nav > li > a:hover > i#dashboard{
+	    margin: 0 0.9em 0 0.9em;
+	    color: $salmon;
+	  }
+
+	.navbar-nav > li > a > .nav-label{
+	    visibility: hidden;
+	    margin: 0 0.5em;
+	    transition: visibility 0.1s;
+	    -webkit-transition: visibility 0.1s;
+	    -moz-transition: visibility 0.1s;
+	    -o-transition: visibility 0.1s;
+	  }
+
+	.navbar-nav > li > a:hover > .nav-label{
+	    visibility: visible;
+	  }
+
+
+
+	 .navbar-nav > li > a > span#set, span#out{
+	   margin: 0 0;
+	 }
+}
+
+.fa-gray{
+  font-size: 1.75em;
+  color: rgba(89, 89, 89, 0.5);
+  transition: color 0.35s;
+  -webkit-transition: color 0.35s;
+  -moz-transition: color 0.35s;
+  -o-transition: color 0.35s;
+}
+
+.fa-vp{
+  color: rgba(62, 200, 230, 0.95);
+  cursor: pointer;
+
+}
+
+.fa-ep{
+  color: rgba(255, 103, 89, 0.95);
+}
+
+.fa-gray:hover, .fa-orange:hover{
+  /*color: rgba(89, 89, 89, 0.95); */
+  color: rgb(249, 209, 97);
+}
+
+
+/* DASHBOARD
+------------------------------------------*/
+
+
+
+.btn-default-gray {
+  background-color: #bbb;
+  border-color: #bbb;
+}
+
+.dashboard-wrapper{
+  /*background-color: rgb(249, 234, 192);*/
+  background-color: rgba(255, 255, 245, 0.5);
+  min-height: 500px;
+  padding: 1.5em;
+}
+
+.account-info {
+ /* background-color: rgb(247, 226, 170);*/
+ padding: 1em 0 1em 0;
+ /*  padding: 0.75em 1em 0.3em 1em;
+ min-height: 5.5em;*/
+ margin-bottom: 0.5em;
+ min-height: 4.3em;
+ background-color: transparent!important;
+}
+
+.account-type-wrapper > td > .account-name{
+  font-size: 1.5em;
+  line-height: 1.5em;
+  font-family: 'Cabin', sans-serif;
+  opacity: 1;
+  position: absolute;
+  transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -oz-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+}
+
+.account-type-wrapper > td > #venue-provider-label,
+.account-type-wrapper > td > #event-planner-label{
+  font-weight: normal;
+  opacity: 0;
+  font-size: 1em;
+  line-height: 1.5em;
+  cursor: none;
+  transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -oz-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+
+
+}
+
+.account-type-wrapper > #venue-provider-label{
+  background-color: rgba(62, 200, 230, 0.75);
+}
+
+.account-type-wrapper > #event-planner-label{
+  background-color: rgba(255, 103, 89, 0.75);
+}
+
+
+
+.account-type-wrapper > td > span > #account-type{
+  font-size: 1em;
+  right: 0;
+  color: $white;
+  font-weight: 700;
+
+}
+
+.account-type-wrapper > td > .fa-account-type{
+  cursor: pointer;
+  margin-right: 0.25em;
+  margin-top: -0.2em;
+}
+
+.account-type-wrapper:hover > td > .account-name {
+  opacity: 0;
+}
+
+.account-type-wrapper:hover > td > #venue-provider-label,
+.account-type-wrapper:hover > td > #event-planner-label{
+  opacity: 1;
+}
+
+#add-venue{
+ color: rgba(89, 89, 89, 0.7);
+}
+
+#add-venue:hover{
+ color: rgba(89, 89, 89, 1);
+}
+
+
+
+.fa-gray{
+  font-size: 1.75em;
+  color: rgba(89, 89, 89, 0.5);
+  transition: color 0.35s;
+  -webkit-transition: color 0.35s;
+  -moz-transition: color 0.35s;
+  -o-transition: color 0.35s;
+}
+
+.fa-vp{
+  color: rgba(62, 200, 230, 0.95);
+  cursor: pointer;
+
+}
+
+.fa-ep{
+  color: rgba(255, 103, 89, 0.95);
+}
+
+.fa-gray:hover, .fa-orange:hover{
+  /*color: rgba(89, 89, 89, 0.95); */
+  color: rgb(249, 209, 97);
+}
+
+.label-light{
+  background-color: $salmon;
+  color: rgba(255, 255, 245, 0.95);
+  margin-top: -0.1em;
+  border-radius: 0;
+  opacity: 0.80;
+
+
+}
+
+.label-light-gray{
+  background-color: rgba(153,153,153,0.9);
+  color: rgba(255, 255, 245, 0.95);
+  margin-top: -0.1em;
+  border-radius: 0;
+  opacity: 0.80;
+
+}
+
+.table > thead > tr > th,
+.table > thead > tr > td{
+  border-top: 0;
+  border-bottom: 2px solid #dddddd;
+}
+
+.table > tbody > tr > th,
+.table > tbody > tr > td,
+.table > tfoot > tr > th,
+.table > tfoot > tr > td{
+  border-top: 0;
+  border-bottom: 1px solid #dddddd;
+}
+
+tr#last >td{
+ border-bottom: 0;
+
+}
+
+.table-heading{
+  text-transform: uppercase;
+  font-family: 'Cabin', sans-serif;
+  font-weight: 700;
+  color: rgba(89, 89, 89, 0.5);
+  font-size: 1.2em;
+}
+
+.table-label{
+  font-size: 1.1em;
+  font-weight: 700;
+  color: rgba(89, 89, 89, 0.5);
+}
+
+.table-answer{
+  font-size: 1.1em;
+  color: rgba(89, 89, 89, 0.5);
+
+}
+
+.dashboard-flash-group{
+  margin-bottom: 2em;
+}
+
+.dashboard-flash{
+  height: 4em;
+  color: rgba(255,255,245,0.85);
+  padding: 0.4em 0 0.5em 2em;
+}
+
+#venues-count{
+  background-color: rgb(249, 209, 97);
+}
+
+#rooms-count{
+  background-color: rgba(62, 200,  230, 1);
+}
+
+#bookings-count{
+  background-color: rgba(255, 103, 89, 1);
+}
+
+#reviews-count{
+  background-color: rgb(181, 237, 118);
+}
+
+.dashboard-figure{
+  color: $white;
+  font-size: 2em;
+  line-height: 1.5em;
+  font-family: 'Cabin', sans-serif;
+  margin: 0 auto;
+}
+
+.dashboard-flash > .dashboard-figure-label{
+  font-size: 1.1em;
+  line-height: 1.5em;
+  opacity: 0;
+  transform: translateX(1.5em);
+    -webkit-transform:  translateX(1.5em);
+    -o-transform: translateX(1.5em);
+    -moz-transform: translateX(1.5em);
+  transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -oz-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+}
+
+.dashboard-flash > i {
+  margin-top: 0.15em;
+  position: absolute;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -oz-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+}
+
+.dashboard-flash:hover .dashboard-figure-label {
+  opacity: 1;
+  transform: translateX(0em);
+    -webkit-transform: translateX(0em);
+    -o-transform: translateX(0em);
+    -moz-transform: translateX(0em);
+}
+
+.dashboard-flash:hover > i{
+  opacity: 0;
+}
+
+
+.dashboard-card-frame {
+  position: relative;
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+
+}
+
+.dashboard-card-frame .dashboard-card-image{
+  position: relative;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+  overflow: hidden;
+  display: block;
+
+}
+
+.dashboard-card-frame .dashboard-card-caption{
+    opacity: 0;
+    background-color: rgba(81, 81, 81, 0.7);
+    transition: all 0.4s ease-in-out;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 5em;
+    text-align: center;
+    color: $white;
+
+}
+
+.dashboard-card-frame:hover .dashboard-card-image{
+ -webkit-transform: scale(1.1);
+ -moz-transform: scale(1.1);
+ -o-transform: scale(1.1);
+ -ms-transform: scale(1.1);
+ transform: scale(1.1);
+}
+
+.dashboard-card-frame:hover .dashboard-card-caption{
+  opacity: 1;
+}
+
+.dashboard-card-frame .dashboard-card-caption .dashboard-card-name {
+    cursor: pointer;
+    transform: translateY(-100px);
+    -webkit-transform:  translateY(-100px);
+    -o-transform: translateY(-100px);
+    -moz-transform: translateY(-100px);
+    opacity: 0;
+
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -oz-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    color: $white;
+    background-color: $lblue;
+    font-size: 1.5em;
+    padding: 0.5em;
+}
+
+
+.dashboard-card-frame .dashboard-card-caption i {
+    cursor: pointer;
+    margin-top: 0.5em;
+    font-size: 1.5em;
+    transform: translateY(100px);
+    -webkit-transform:  translateY(100px);
+    -o-transform: translateY(100px);
+    -moz-transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -oz-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+}
+
+.dashboard-card-frame .dashboard-card-caption .dashboard-card-name a{
+/*  color: rgb(81, 81, 81);*/
+color: $white;
+}
+
+.dashboard-card-frame .dashboard-card-caption a i{
+  color: $white;
+}
+
+.dashboard-card-frame .dashboard-card-caption .dashboard-card-name:hover{
+  background-color: rgba(249, 209, 97, 0.9);
+}
+
+
+.dashboard-card-frame .dashboard-card-caption .dashboard-card-name:hover a{
+ color: $white;
+ text-decoration: none;
+}
+
+.dashboard-card-frame .dashboard-card-caption .dashboard-card-details {
+  margin-top: 0.5em;
+  display: block;
+}
+
+/*.dashboard-card-frame .dashboard-card-caption .dashboard-card-details #dashboard-card-cancel,
+.dashboard-card-frame .dashboard-card-caption .dashboard-card-details #dashboard-card-contact,
+.dashboard-card-frame .dashboard-card-caption .dashboard-card-details #dashboard-card-view{
+  margin-top: 0.5em;
+  display: none;
+}*/
+
+
+.dashboard-card-frame .dashboard-card-caption a i:hover,
+{
+  color: rgba(249, 209, 97, 0.9);
+  text-decoration: none;
+}
+
+
+.dashboard-card-frame:hover .dashboard-card-caption .dashboard-card-name,
+.dashboard-card-frame:hover .dashboard-card-caption i {
+    opacity: 1;
+    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+    -o-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+}
+.dashboard-card-frame:hover .dashboard-card-caption p {
+    transition-delay: 0.1s;
+}
+
+
+
+.panel-dash > .panel-body > .bookings-div{
+  color: rgba(158,158,158,0.9);
+  padding: 1em 1.5em ;
+  background-color: rgba(232, 232, 225,0.2);
+
+  transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+
+   border-bottom: 1px solid rgba(255, 103, 89,0.3);
+
+}
+
+.panel-dash > .panel-body > .bookings-div:hover{
+  background-color: rgba(232, 232, 225,0.7);
+}
+
+
+.panel-dash > .panel-body > .bookings-div > .bookings-place > .bookings-action{
+  opacity: 0;
+
+    transform: translateX(1.5em);
+    -webkit-transform:  translateX(1.5em);
+    -o-transform: translateX(1.5em);
+    -moz-transform: translateX(1.5em);
+      transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -oz-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+}
+
+.panel-dash > .panel-body > .bookings-div >  .bookings-place > .booker-name{
+  position: absolute;
+  right: 0;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -oz-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+}
+
+
+
+.panel-dash > .panel-body > .bookings-div:hover >  .bookings-place > .bookings-action{
+  opacity: 1;
+  cursor: pointer;
+  transform: translateX(0em);
+    -webkit-transform: translateX(0em);
+    -o-transform: translateX(0em);
+    -moz-transform: translateX(0em);
+}
+
+.panel-dash > .panel-body > .bookings-div:hover >  .bookings-place > .booker-name{
+ opacity: 0;
+
+}
+
+
+

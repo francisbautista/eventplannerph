@@ -1,6 +1,6 @@
 <div id="navbar-wrapper">
   <div class="container" id ="nav-container">        
-    <div id="nav" class="navbar navbar-inverse navbar-fixed-top no-padding">
+    <div id="nav" class="navbar navbar-fixed-top no-padding">
         <div class="col-sm-12 padding-3em">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -22,34 +22,42 @@
 
                       <ul id="unsigned" class="nav navbar-nav">              
             						<li class="dropdown">
-              						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Log In <span class="caret"></span></a>
-              							<ul class="dropdown-menu" role="menu">
-              							Are you a
-              								<li>
-    		                         <%= link_to '<i class="fa fa-sign-in nav-icon fa-2x" id="log-in"></i>  <span class="nav-label" id="log-in">Event Planner?</span>'.html_safe, new_user_session_path, id: "log-in"  %>       
-    		                       </li>
+              						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Log In</span></a>
+              							<div class="dropdown-menu" role="menu" id="log-in-dropdown">
+                              <div class="col-lg-12"><h4>Welcome back!</h4></div>
+              								  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="button-dropdown" id="event-planner">
+    		                         <%= link_to "<h4>Event Planner</h4>".html_safe, new_user_session_path, id: "log-in"  %>   
+                                  </div>    
+    		                       </div>
 
-    		                       	<li>
-    		                         <%= link_to '<i class="fa fa-sign-in nav-icon fa-2x" id="log-in"></i>  <span class="nav-label" id="log-in">Venue Provider?</span>'.html_safe, new_supplier_session_path, id: "log-in"  %>    
-    		                       	</li>
+    		                       	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 
-              							</ul><!--dropdown menu-->
+                                  <div class="button-dropdown" id="venue-provider">
+    		                         <%= link_to "<h4>Venue Provider</h4>".html_safe, new_supplier_session_path, id: "log-in"  %>    
+                                 </div>
+    		                       	</div>
+
+              							</div><!--dropdown menu-->
               						</li>
 
-                        <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign Up <span class="caret"></span></a>
-                          <ul class="dropdown-menu" role="menu">
-                          Are you a
-                            <li>
-                               <%= link_to '<i class="fa fa-plus-square nav-icon fa-2x" id="create-new"></i>  <span class="nav-label" id="create-new">Event Planner?</span>'.html_safe, new_user_registration_path, id: "create-new"  %>
-                               
-                             </li> 
+                        <li class="dropdown" id="sign-up-li">
+                        <button class="dropdown-toggle btn btn-danger" data-toggle="dropdown" id="sign-up">Sign Up!</button>
+                          <div class="dropdown-menu" role="menu" id ="sign-up-dropdown">
+                            <div class="col-lg-12"><h4>Sign up for our services!</h4></div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                              <div class="button-dropdown" id="event-planner">
+                               <%= link_to "<h4>Book a venue!</h4>".html_safe, new_user_registration_path, id: "create-new"  %>
+                               </div>
+                             </div> 
 
-                              <li>
-                               <%= link_to '<i class="fa fa-sign-in nav-icon fa-2x" id="log-in"></i>  <span class="nav-label" id="log-in">Venue Provider?</span>'.html_safe, new_supplier_registration_path, id: "log-in"  %>    
-                              </li>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                              <div class="button-dropdown" id="venue-provider">
+                               <%= link_to '<h4>Provide a venue!</h4>'.html_safe, new_supplier_registration_path, id: "log-in"  %>  
+                               </div>  
+                            </div>
 
-                          </ul><!--dropdown menu-->
+                          </div><!--dropdown menu-->
                         </li>    
 
                       </ul> <!--unsigned-->  
