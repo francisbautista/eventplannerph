@@ -80,12 +80,12 @@ class AssetsController < ApplicationController
   def load_uploadable
     if request.original_url.include? "rooms"
       placeholder, venue, v_id, room, r_id, asset = request.path.split("/")
-      puts "==========================="
-      puts placeholder, venue, v_id, room, r_id, asset
+      # puts "==========================="
+      # puts placeholder, venue, v_id, room, r_id, asset
       @venue= venue.singularize.classify.constantize.find(v_id)
       @room = room.singularize.classify.constantize.find(r_id)
-      puts "==================="
-      puts @room.inspect
+      # puts "==================="
+      # puts @room.inspect
       @uploadable =@room
     else
       resource, id = request.path.split('/')[1,2]
