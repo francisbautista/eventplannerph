@@ -545,16 +545,20 @@ This stylesheet forms part of the Formtastic Rails Plugin
   z-index: 999;
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.175);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.175);
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
 }
 
 .navbar-toggle{
   background-color: rgba(255, 103, 89, 1);
   border: none;
   margin-top: 20px;
-  transition: background-color 0.2s;
-  -webkit-transition: background-color 0.2s;
-  -o-transition: background-color 0.2s;
-  -moz-transition: background-color 0.2s;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
 }
 
 .navbar-toggle span{

@@ -1,10 +1,12 @@
+
+
 /*====================================
 =            ON DOM READY            =
 ====================================*/
 $(function() {
   
     // Toggle Nav on Click
-    $('.toggle-nav').click(function() {
+    $('.navbar-toggle').click(function() {
         // Calling a function in case you want to expand upon this.
         toggleNav();
     });
@@ -13,17 +15,35 @@ $(function() {
 });
 
 
-/*========================================
-=            CUSTOM FUNCTIONS            =
-========================================*/
+
+
+// /*========================================
+// =            CUSTOM FUNCTIONS            =
+// ========================================*/
 function toggleNav() {
-    if ($('#site-wrapper').hasClass('show-nav')) {
-        // Do things on Nav Close
-        $('#site-wrapper').removeClass('show-nav');
-    } else {
-        // Do things on Nav Open
-        $('#site-wrapper').addClass('show-nav');
+
+
+    if ($('.main-nav').hasClass('active')) {
+        $('.main-nav').css('width', '0');
+        $('.page-wrap').css('width', '100%');
+        // $('.navbar').css('width', '100%');
+        // $('.navbar').css('right', '0');
+        $('.navbar-toggle').css('right', '0');
+        $('.main-nav').removeClass('active')
+    }
+
+    else {
+
+        $('.main-nav').css('width', '20%');
+        $('.page-wrap').css('width', '80%');
+        // $('.navbar').css('width', '80%');
+        // $('.navbar').css('right', '20%');
+        $('.navbar-toggle').css('right', '40%');
+        $('.main-nav').addClass('active');
+
+
     }
 
     //$('#site-wrapper').toggleClass('show-nav');
 }
+
