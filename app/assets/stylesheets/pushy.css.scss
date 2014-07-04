@@ -30,6 +30,7 @@ $white: rgba(255, 255, 245, 1); /* #fffff5 */
   color: #fffff5;
   background: #3B3B3B;
   overflow-y: auto;
+  overflow-x: hidden;
   transition: width 0.3s ease;
   -webkit-transition: width 0.3s ease;
   -moz-transition: width 0.3s ease;
@@ -63,7 +64,7 @@ $white: rgba(255, 255, 245, 1); /* #fffff5 */
 .main-nav > .quick-links{
   margin-top: 3em;
   padding-left: 1em;
-  
+
  
 
   a {

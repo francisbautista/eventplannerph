@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require fullcalendar
 //= require turbolinks
+//= require jquery.turbolinks
 //= require pushy
 //= require modernizr
 //= require bootstrap-sprockets

@@ -3,8 +3,14 @@
 		<img src="http://placekitten.com/48/49" class="img-circle  img-responsive pull-right">
 	</div>
 	<div class="col-xs-8 nav-text no-padding">
-		<span class="label">Venue Provider</span>
-		<h3 style="margin-top: 0">&nbsp;<%= current_supplier.first_name %></h3>
+		<% if supplier_signed_in? %>
+			<span class="label">Venue Provider</span>
+			<h3 style="margin-top: 0">&nbsp;<%= current_supplier.first_name %></h3>
+		<% else %>
+			<span class="label">Event Planner</span>
+			<h3 style="margin-top: 0">&nbsp;<%= current_user.first_name %></h3>
+
+		<% end %>
 	</div>
 		
 
@@ -19,9 +25,20 @@
              <span class="nav-label" id="venue-search">Search</span>
          </a>	
 
+         <% if supplier_signed_in? %>
+
          <%= link_to '<span class="nav-label" id="settings">My Account</span>'.html_safe, edit_supplier_registration_path, id: "set"  %>
 
          <%= link_to '<span class="nav-label" id="log-out">Log out</span>'.html_safe, destroy_supplier_session_path, :method => :delete, id: "out"  %>
+
+         <% else %>
+
+         <%= link_to '<span class="nav-label" id="settings">My Account</span>'.html_safe, edit_user_registration_path, id: "set"  %>
+
+         <%= link_to '<span class="nav-label" id="log-out">Log out</span>'.html_safe, destroy_user_session_path, :method => :delete, id: "out"  %>
+
+         <% end %>
+
 
      </div>
 
