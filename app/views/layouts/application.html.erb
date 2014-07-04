@@ -13,17 +13,29 @@
 </head>
 
 
-<header>
-    <% if user_signed_in? ||  supplier_signed_in? %>
-    <%= render partial: "layouts/signed" %>
-    <% else %>
-    <%= render :partial => "layouts/unsigned" %>
-    <% end %>
-</header>
-
 <body>
 
-<%= yield %>
+
+<div id="site-wrapper">
+  
+   <div id="site-canvas">
+
+      <% if user_signed_in? ||  supplier_signed_in? %>
+        <%= render partial: "layouts/offcanvas" %>
+      <% else %>
+      <% end %>
+
+      <% if user_signed_in? ||  supplier_signed_in? %>
+          <%= render partial: "layouts/signed" %>
+        <% else %>
+          <%= render :partial => "layouts/unsigned" %>
+      <% end %>
+
+    <%= yield %>
+
+  </div><!--site canvas-->
+
+</div><!--site wrapper-->
 
 
 

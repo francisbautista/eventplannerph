@@ -12,6 +12,7 @@
  *
  *= require_self
  *= require fullcalendar
+ *= require pushy
  *= require font-awesome
  *= require_tree .
  */
@@ -538,7 +539,7 @@ This stylesheet forms part of the Formtastic Rails Plugin
   color: rgb(158,158,158);
   font-weight: normal;
   text-decoration: none;
-  max-height: 68px;
+  height: 68px;
   border: none;
   padding-right: 1em;
   z-index: 999;
@@ -546,213 +547,48 @@ This stylesheet forms part of the Formtastic Rails Plugin
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.175);
 }
 
-.navbar .navbar-nav > li >  a{
-	color: $gray;
+.navbar-toggle{
+  background-color: rgba(255, 103, 89, 1);
+  border: none;
+  margin-top: 20px;
+  transition: background-color 0.2s;
+  -webkit-transition: background-color 0.2s;
+  -o-transition: background-color 0.2s;
+  -moz-transition: background-color 0.2s;
+}
+
+.navbar-toggle span{
+	background-color: $white;
 }
 
 
-.navbar .navbar-nav > .active > a {
-  background-color: none;
-  color: $salmon;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.navbar .navbar-nav > .active > a:hover{
-  color: white;
-  background-color: $salmon;
+.navbar-toggle:hover,
+.navbar-toggle:focus {
+  background-color: rgba(255, 103, 89, 0.8);
 }
 
 
-.nav{
-  padding-left: 0;
-  padding-right: 0;
-}
-
-
-
-.navbar .navbar-nav > li > a:hover{
-  color: $salmon;
-  background-color: $white;
-}
-.navbar .navbar-nav > li > a.active{
-  color: $salmon;
-  background-color: $white;
-}
-
-.navbar-nav > .active > a {
-  background-color: none;
-  color: $salmon;
-}
-
-.navbar-nav > .open > a{
-  background-color: $white;
-  color: #999;
-}
-
-.navbar-nav > .open > a:hover,
-.navbar-nav > .open > a:focus {
-  background-color: $white;
-  color: $salmon;
-}
-
-
-.navbar-nav .open .dropdown-menu > li > a:hover{
-  background-color: $navhover;
-  color: #aaa;
-
-}
-
-
-
-#navbar-wrapper {
-  position: relative;
-  z-index: 10;
-  height: 68px;
-}
-
-#nav-container{
-  width: 100%;
-}
-
-
-
-
-@media (min-width: 767px){
-
-	.navbar .navbar-nav,
-	.navbar .navbar-nav > li > a{
-		height: 68px;
-	}
-
-
-	.navbar .navbar-nav > li > a{
-		padding-top: 1.5em;
-		transition: all 0.3s;
-		-webkit-transition: all 0.3s;
-		-moz-transition: all 0.3s;
-		-o-transition: all 0.3s;
-	}
-
-	.navbar-nav > li > button {
-		margin-top: 1em;
-	}
-
-	.navbar-nav > li > .dropdown-menu {
-		width: 400px;
-	}
-
-	.main-nav {
+@media (min-width: 768px){
+	.navbar-toggle {
+		display: block;
 		float: right;
+	
 	}
 
-	#signed > li {
-		margin-top: -0.5em;
+}
+
+
+
+
+
+
+@media (max-width: 767px){
+	.navbar-toggle {
+		display: block;
 
 	}
 
-	.navbar-nav > li > .dropdown-menu{
-		right: 0;
-		left: auto;
-		border-radius: 0;
-		margin: -1px;
-
-	}
-
-	.navbar-nav > li > #sign-up-dropdown{
-		margin-top: 1.25em;
-	}
-
-	.navbar-nav > li > #log-in-dropdown{
-		margin-top: 0.07em;
-	}
-
-	.navbar-nav > li > .dropdown-menu > div > .button-dropdown > a{
-		color: $white
-	}
-
-	.navbar-nav > li > .dropdown-menu > div > .button-dropdown > a:hover{
-		text-decoration: none; 
-	}
-
-	.button-dropdown{
-		height: 50px;
-		padding: 0.4em;
-		text-align: center;
-		z-index: 9;
-	}
-
-	.navbar-nav > li > .dropdown-menu > div > #event-planner{
-		background-color: $lblue;
-		margin: 0.4em 0 0.5em 0.5em;
-	}
-
-	.navbar-nav > li > .dropdown-menu > div > #venue-provider{
-		background-color: $salmon;
-		margin: 0.4em  0.5em 0.5em 0;
-	}
-
-	.navbar-inverse .navbar-nav > li > a{
-	    padding-top: 1.2em;
-	    transition: all 0.3s;
-	    -webkit-transition: all 0.3s;
-	    -moz-transition: all 0.3s;
-	    -o-transition: all 0.3s;
-  	}
-  	.navbar-nav .open .dropdown-menu > li > a{
-	    height: 50px;
-	    border-bottom: 1px solid $cream;
-  	}
-
-	.navbar-nav > li > .dropdown-menu {
-	    margin-top: -1px;
-	  }
-
-	.navbar-nav > li > a > i{
-	    display: block;
-	    color: rgba(87, 94, 92, 0.6);
-	    margin: 0.1em 0.5em 0 0.5em;
-	    transition: margin 0.2s ease-in-out;
-	    -webkit-transition: margin 0.2s ease-in-out;
-	    -moz-transition: margin 0.2s ease-in-out;
-	    -o-transition: margin 0.2s ease-in-out;
-	  }
-
-	.navbar-nav > li > a > i#dashboard{
-	    margin: 0.1em .9em 0 .9em;
-	   	transition: margin 0.2s ease-in-out;
-	    -webkit-transition: margin 0.2s ease-in-out;
-	    -moz-transition: margin 0.2s ease-in-out;
-	    -o-transition: margin 0.2s ease-in-out;
-	}
-
-	.navbar-nav > li > a:hover > .nav-icon{
-	    margin: 0 0.5em 0 0.5em;
-	    color: $salmon;
-	  }
-	.navbar-nav > li > a:hover > i#dashboard{
-	    margin: 0 0.9em 0 0.9em;
-	    color: $salmon;
-	  }
-
-	.navbar-nav > li > a > .nav-label{
-	    visibility: hidden;
-	    margin: 0 0.5em;
-	    transition: visibility 0.1s;
-	    -webkit-transition: visibility 0.1s;
-	    -moz-transition: visibility 0.1s;
-	    -o-transition: visibility 0.1s;
-	  }
-
-	.navbar-nav > li > a:hover > .nav-label{
-	    visibility: visible;
-	  }
-
-
-
-	 .navbar-nav > li > a > span#set, span#out{
-	   margin: 0 0;
-	 }
+	
 }
 
 .fa-gray{
