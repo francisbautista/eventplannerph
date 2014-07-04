@@ -9,7 +9,7 @@ $(document).ready(function(){
    var windowWidth = $(window).width();
   
     // Toggle Nav on Click
-    $('.navbar-toggle').click(function() {
+    $('.open-menu').click(function() {
        if (windowWidth >= 767){
             toggleNav();
         } else {
