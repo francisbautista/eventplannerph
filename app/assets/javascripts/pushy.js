@@ -3,13 +3,34 @@
 /*====================================
 =            ON DOM READY            =
 ====================================*/
-$(function() {
+$(document).ready(function(){
+
+
+   var windowWidth = $(window).width();
   
     // Toggle Nav on Click
     $('.navbar-toggle').click(function() {
-        // Calling a function in case you want to expand upon this.
-        toggleNav();
+       if (windowWidth >= 767){
+            toggleNav();
+        } else {
+            toggleNavMobile();
+        }      
     });
+
+    // Resize sections on window resize
+    $(window).resize(function() {
+      
+       
+       if (windowWidth >= 767){
+            toggleNav();
+        } else {
+            toggleNavMobile();
+        }  
+               
+
+
+    });
+
 
   
 });
@@ -26,24 +47,50 @@ function toggleNav() {
     if ($('.main-nav').hasClass('active')) {
         $('.main-nav').css('width', '0');
         $('.page-wrap').css('width', '100%');
-        // $('.navbar').css('width', '100%');
-        // $('.navbar').css('right', '0');
-        $('.navbar-toggle').css('right', '0');
+         $('.navbar').css('width', '100%');
+         $('.navbar').css('right', '0');
+        //$('.navbar-toggle').css('right', '0');
         $('.main-nav').removeClass('active')
     }
 
     else {
 
-        $('.main-nav').css('width', '20%');
-        $('.page-wrap').css('width', '80%');
-        // $('.navbar').css('width', '80%');
-        // $('.navbar').css('right', '20%');
-        $('.navbar-toggle').css('right', '40%');
+        $('.main-nav').css('width', '15%');
+        $('.page-wrap').css('width', '85%');
+        $('.navbar').css('width', '85%');
+        $('.navbar').css('right', '15%');
+       //$('.navbar-toggle').css('right', '40%');
         $('.main-nav').addClass('active');
 
 
     }
 
-    //$('#site-wrapper').toggleClass('show-nav');
+
 }
+
+function toggleNavMobile() {
+
+
+    if ($('.main-nav').hasClass('active')) {
+        $('.main-nav').css('width', '0');
+        $('.page-wrap').css('width', '100%');
+        $('.page-wrap').css('right', '0');
+         $('.navbar').css('width', '100%');
+         $('.navbar').css('right', '0');
+        //$('.navbar-toggle').css('right', '0');
+        $('.main-nav').removeClass('active')
+    }
+
+    else {
+
+        $('.main-nav').css('width', '50%');
+       //$('.navbar-toggle').css('right', '40%');
+        $('.main-nav').addClass('active');
+
+
+    }
+
+
+}
+
 

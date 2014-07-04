@@ -118,6 +118,14 @@ h1, h2, h3 {
 	background-color: $white;
 }
 
+.no-padding {
+ padding: 0
+}
+
+.less-padding {
+ padding-right: 0.5em
+}
+
 
 
 .searchbox .btn, .searchbox .form-control {
