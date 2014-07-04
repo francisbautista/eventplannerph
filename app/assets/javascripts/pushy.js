@@ -17,6 +17,14 @@ $(document).ready(function(){
         }      
     });
 
+    $('.main-nav').click(function() {
+       if (windowWidth >= 767){
+            toggleNav();
+        } else {
+            toggleNavMobile();
+        }      
+    });
+
     // Resize sections on window resize
     $(window).resize(function() {
       

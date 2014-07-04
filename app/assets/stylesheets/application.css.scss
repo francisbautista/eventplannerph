@@ -579,17 +579,36 @@ This stylesheet forms part of the Formtastic Rails Plugin
   background-color: rgba(255, 103, 89, 0.8);
 }
 
+.navbar-nav {
+  z-index: 999;
+}
 
-@media (min-width: 768px){
-	.open-menu {
-		display: block;
-		float: right;
-	
-	}
+
+.navbar-nav > .open > a{
+  background-color: $white;
+  color: #999;
+}
+
+.navbar-nav > .open > a:hover,
+.navbar-nav > .open > a:focus {
+  background-color: transparent !important;
+  color: $salmon;
+}
+
+
+
+@media (max-width: 767px){
+
 
 }
 
  @media (min-width: 767px){
+
+  .open-menu {
+    display: block;
+    float: right;
+  
+  }
   
     .navbar .navbar-nav,
     .navbar .navbar-nav > li > a{
@@ -603,6 +622,12 @@ This stylesheet forms part of the Formtastic Rails Plugin
       -webkit-transition: all 0.3s;
       -moz-transition: all 0.3s;
       -o-transition: all 0.3s;
+      color: $gray;
+    }
+
+    .navbar .navbar-nav > li > a:hover{
+      background-color: $white;
+      color: $salmon;
     }
   
     .navbar-nav > li > button {
@@ -631,7 +656,7 @@ This stylesheet forms part of the Formtastic Rails Plugin
       .navbar-nav > li > #log-in-dropdown{
       margin-top: 0.07em;
    }
-   
+
     .navbar-nav > li > .dropdown-menu > div > .button-dropdown > a{
       color: $white
     }
