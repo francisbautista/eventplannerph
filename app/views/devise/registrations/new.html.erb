@@ -35,11 +35,31 @@
 		<div class="row-fluid">
 			<div class="col-md-12">
 				<h3> Personal Details </h3>
+			</div>
 				<hr>
 
-
-			</div>
+		<div class="col-md-4">
+			FIRST NAME 
+			<%= f.input :first_name, :required => true,  :autofocus => true, :label=>false %>
+	  	</div>
+		<div class="col-md-4">
+			LAST NAME
+		    <%= f.input :last_name, :required => true,  :autofocus => true, :label=>false  %>
 		</div>
+		<div class="col-md-8">    
+			MOBILE NUMBER
+			<%= f.input :mobile, :required => true,  :autofocus => true, :label=>false  %>
+	 	</div>
+		<div class="col-md-8">	    
+			TELEPHONE NUMBER
+		    <%= f.input :telephone, :required => true,  :autofocus => true, :label=>false  %>
+	  	</div>
+		<div class="col-md-12">	   
+			BIRTHDAY
+		    <%= f.input :birthday, :required => true,  :autofocus => true, :label=>false  %>
+		</div>
+
+	</div> <!-- row-fluid for Personal Details -->
 
 
 
@@ -49,14 +69,12 @@
     <% end %>
  
 <div class="row-fluid">
+	<hr>
 
     	<%= f.action :submit, :button_html => { :class => "btn btn-info pull-right"}%>
 
  </div>
-  
- <%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %>
-<%= content_tag(:div, flash[:notice], :id => "flash_notice") if flash[:notice] %>
-<%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %>
+
 
 <% end %>
 
@@ -73,3 +91,4 @@
 
 	</center>
 </div> <!--content-->
+<br><br>
