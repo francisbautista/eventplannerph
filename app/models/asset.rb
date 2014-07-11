@@ -1,6 +1,6 @@
 class Asset < ActiveRecord::Base
   attr_accessor :content, :photo
-  
+
   # Model Relations-----------------#
   belongs_to :uploadable, polymorphic: true
 

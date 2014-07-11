@@ -1,7 +1,23 @@
-dashboard here
+<div class="col-md-12">
 
-<% if supplier_signed_in? %>
-	i'm a supplier
-<% else %>
-	I'm a user
-<% end %>
+  <div class="container-960">
+
+    <div class="container dashboard-wrapper">
+
+	<% if supplier_signed_in? %>
+		<%= render partial: "pages/supplier" %>
+	<% else %>
+		<%= render partial: "pages/user" %>
+	<% end %>
+
+    
+
+          
+    </div><!--container-->
+
+
+
+  </div>
+</div>
+
+

@@ -15,6 +15,8 @@ class AssetsController < ApplicationController
     @asset = @uploadable.assets.new
   end
 
+  # Show function presents asset to uploadable
+  # type in show view
   def show
     @asset = Asset.find(params[:id])
     @assets = @uploadable.assets
@@ -24,6 +26,7 @@ class AssetsController < ApplicationController
     end
   end
 
+  # New function creates a new assets per model
   def new
     @asset = @uploadable.assets.new
   end
@@ -54,7 +57,7 @@ class AssetsController < ApplicationController
   # def update
   # end
 
-
+  # Destroy function releases Asset
   def destroy
     @asset = Asset.find(params[:id])
     @asset.photo.destroy
@@ -62,6 +65,7 @@ class AssetsController < ApplicationController
     redirect_to :back
   end
 
+  #=====================================================================#
   private
   # Some strong params for whitelisting
   def asset_params
@@ -76,12 +80,12 @@ class AssetsController < ApplicationController
   def load_uploadable
     if request.original_url.include? "rooms"
       placeholder, venue, v_id, room, r_id, asset = request.path.split("/")
-      puts "==========================="
-      puts placeholder, venue, v_id, room, r_id, asset
+      # puts "==========================="
+      # puts placeholder, venue, v_id, room, r_id, asset
       @venue= venue.singularize.classify.constantize.find(v_id)
       @room = room.singularize.classify.constantize.find(r_id)
-      puts "==================="
-      puts @room.inspect
+      # puts "==================="
+      # puts @room.inspect
       @uploadable =@room
     else
       resource, id = request.path.split('/')[1,2]
