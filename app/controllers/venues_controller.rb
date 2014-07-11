@@ -2,6 +2,9 @@ class VenuesController < ApplicationController
   # before_filter :authenticate_user!
   before_action :set_venue, only: [:show, :edit, :update, :destroy]
 
+  # You can access this in any venue view as @classifications
+  before_action :venue_classification
+
   # Index function displays all venues for catalog
   def index
       @venues = Venue.all
@@ -82,5 +85,12 @@ class VenuesController < ApplicationController
     # Venue Parameter Whitelisting
     def venue_params
       params.require(:venue).permit!
+    end
+
+    def venue_classification
+      @classifications = ["Bar", "Restaurant", "Hotel",
+                        "Farm/Hacienda", "Garden",
+                        "Church","Ballroom", "Gallery",
+                        "Other"]
     end
 end
