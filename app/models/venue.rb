@@ -22,7 +22,7 @@ class Venue < ActiveRecord::Base
   # validates :amenities_id, presence: true
   validates :rates, presence: true
   validates :contact_persons, presence: true
-  validates :contact_number, presence: true
+  validates :contact_numbers, presence: true
   # validates :status, presence: true
   # validates :caterers, presence: true
   validates :policy, presence: true
