@@ -50,6 +50,14 @@ class RoomsController < ApplicationController
 
   # Create function instantiates a new Room model
   def create
+    @room = Room.new(room_params)
+    @room = @venue.rooms.new(room_params)
+
+    if @room.save
+      redirect_to venue_rooms_path
+    else
+      render :action => 'new'
+    end
   end
 
   # Update saves edited Room model
@@ -67,6 +75,8 @@ class RoomsController < ApplicationController
 
   # Destroy eliminates Room model
   def destroy
+    @venue = Venue.find(params[:venue_id])
+    @room = Room.find(params[:id])
     @room.destroy
     respond_to do |format|
       format.html { redirect_to venue_rooms_path }
