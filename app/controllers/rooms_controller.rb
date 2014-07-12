@@ -100,5 +100,3 @@ class RoomsController < ApplicationController
     params.require(:room).permit(:name, :venue_id, :description, :is_booked, :classification, :capacity, :booking_id)
   end
 end
-
-end

@@ -19,7 +19,7 @@ class CreateVenues < ActiveRecord::Migration
       t.boolean :is_booked
       t.integer :freeroom_count
       t.string :email
-      t.integer :user_id
+      t.integer :supplier_id
 
       t.timestamps
     end

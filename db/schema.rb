@@ -139,7 +139,7 @@ ActiveRecord::Schema.define(version: 20140628100400) do
     t.boolean  "is_booked"
     t.integer  "freeroom_count"
     t.string   "email"
-    t.integer  "user_id"
+    t.integer  "supplier_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

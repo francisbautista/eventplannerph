@@ -61,6 +61,9 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    annotate (2.6.5)
+      activerecord (>= 2.3.0)
+      rake (>= 0.8.7)
     arbre (1.0.1)
       activesupport (>= 3.0.0)
     arel (5.0.1.20140414130214)
@@ -91,6 +94,9 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.2.1)
+    fabrication (2.11.3)
+    faker (1.4.1)
+      i18n (~> 0.5)
     font-awesome-rails (4.1.0.0)
       railties (>= 3.2, < 5.0)
     fullcalendar-rails (1.6.4.0)
@@ -197,10 +203,13 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin!
+  annotate (>= 2.6.0)
   bootstrap-sass (~> 3.2.0)
   cancan
   coffee-rails (~> 4.0.0)
   devise
+  fabrication
+  faker
   font-awesome-rails
   formtastic!
   fullcalendar-rails

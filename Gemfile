@@ -40,6 +40,9 @@ gem 'formtastic',           github: 'justinfrench/formtastic'
 gem 'font-awesome-rails'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'cancan'
+gem 'fabrication'
+gem 'faker'
+gem 'annotate', ">=2.6.0"
 
 
 # Use ActiveModel has_secure_password

@@ -19,3 +19,7 @@ Supplier.create!(first_name: 'Tori', last_name: 'Tadiar',
             email: 'tadiar.victoria@gmail.com', password: 'password')
 Supplier.create!(first_name: 'Eyana', last_name: 'Mallari',
             email: 'eyanamallari@gmail.com', password: 'password')
+
+
+50.times { Fabricate(:supplier) }
+50.times { Fabricate(:venue) }
