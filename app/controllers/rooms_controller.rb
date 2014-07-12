@@ -11,6 +11,7 @@ class RoomsController < ApplicationController
 
   # Show function shows all rooms per venue
   def show
+
     @venue = Venue.find(params[:venue_id])
     @room = Room.find(params[:id])
     @room = @venue.rooms.find(params[:id])

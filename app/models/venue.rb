@@ -30,6 +30,8 @@ class Venue < ActiveRecord::Base
 
   # Model Relations-----------------#
   belongs_to :supplier
+  has_many :rooms
+  has_many :bookings, :through => :rooms
   # has_many :assets, as: :uploadable
 
   # Venue Classification Types:
