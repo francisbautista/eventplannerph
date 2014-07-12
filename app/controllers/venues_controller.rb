@@ -24,7 +24,7 @@ class VenuesController < ApplicationController
   # New function creates new model instance
   def new
     @venue = Venue.new
-    @asset = Asset.new
+    # @asset = Asset.new
   end
 
   # Edit function edits a model instance
