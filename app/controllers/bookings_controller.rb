@@ -27,12 +27,8 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @booking }
-      format.js { render :json => @booking.to_json }
-    end
+    @booking = @room.booking.new
+    @booking = @venue.room.booking.new
   end
 
   def edit

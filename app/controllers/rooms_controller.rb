@@ -12,7 +12,7 @@ class RoomsController < ApplicationController
   # Show function shows all rooms per venue
   def show
     @room = Room.find(params[:id])
-    @room = @venue.rooms.find(params[:id])
+
     # @user = User.find(current_user)
 
     # if @user.venues.all.include? @venue
@@ -28,7 +28,6 @@ class RoomsController < ApplicationController
         format.html
         format.json { render json: @room}
       end
-      @venue = Venue.find(params[:id])
     else
       redirect_to error_path
     end
