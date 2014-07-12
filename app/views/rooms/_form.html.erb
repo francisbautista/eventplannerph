@@ -1,49 +1,49 @@
 <%= form_for ([@venue, @room]) do |f| %>
-  <% if @room.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@room.errors.count, "error") %> prohibited this room from being saved:</h2>
+<% if @room.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@room.errors.count, "error") %> prohibited this room from being saved:</h2>
 
-      <ul>
-      <% @room.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% @room.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :is_booked %><br>
-    <%= f.check_box :is_booked %>
-  </div>
-  <div class="field">
-    <%= f.label :classification %><br>
-    <%= f.text_area :classification %>
-  </div>
-  <div class="field">
-    <%= f.label :capacity %><br>
-    <%= f.number_field :capacity %>
-  </div>
-  <div class="field">
-    <%= f.label :booking_id %><br>
-    <%= f.number_field :booking_id %>
-  </div>
-  <div class="field">
-    <%= f.label :venue_id %><br>
-    <%= f.number_field :venue_id %>
-  </div>
-  <div class="field">
-    <%= f.label :amenities %><br>
-    <%= f.text_area :amenities %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<div class="field">
+  <%= f.label :name %><br>
+  <%= f.text_field :name %>
+</div>
+<div class="field">
+  <%= f.label :is_booked %><br>
+  <%= f.check_box :is_booked %>
+</div>
+<div class="field">
+  <%= f.label :classification %><br>
+  <%= f.text_area :classification %>
+</div>
+<div class="field">
+  <%= f.label :capacity %><br>
+  <%= f.number_field :capacity %>
+</div>
+<div class="field">
+  <%= f.label :booking_id %><br>
+  <%= f.number_field :booking_id %>
+</div>
+<div class="field">
+  <%= f.label :venue_id %><br>
+  <%= f.number_field :venue_id %>
+</div>
+<div class="field">
+  <%= f.label :amenities %><br>
+  <%= f.text_area :amenities %>
+</div>
+<div class="field">
+  <%= f.label :description %><br>
+  <%= f.text_area :description %>
+</div>
+<div class="actions">
+  <%= f.submit %>
+</div>
 <% end %>

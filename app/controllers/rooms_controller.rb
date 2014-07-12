@@ -15,11 +15,11 @@ class RoomsController < ApplicationController
     @venue = Venue.find(params[:venue_id])
     @room = Room.find(params[:id])
     @room = @venue.rooms.find(params[:id])
-    @user = User.find(current_user)
+    # @user = User.find(current_user)
 
-    if @user.venues.all.include? @venue
-      @owns_venue = true
-    end
+    # if @user.venues.all.include? @venue
+    #   @owns_venue = true
+    # end
 
     if @venue.id == @room.venue_id
       @booking = Booking.new
