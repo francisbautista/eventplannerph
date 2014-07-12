@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20140628100400) do
   end
 
   create_table "assets", force: true do |t|
+    t.integer  "uploadable_id"
+    t.string   "uploadable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "photo_file_name"

@@ -11,6 +11,28 @@ class RoomsController < ApplicationController
 
   # Show function shows all rooms per venue
   def show
+    @venue = Venue.find(params[:venue_id])
+    @room = Room.find(params[:id])
+    @room = @venue.rooms.find(params[:id])
+    @user = User.find(current_user)
+
+    if @user.venues.all.include? @venue
+      @owns_venue = true
+    end
+
+    if @venue.id == @room.venue_id
+      @booking = Booking.new
+      @uploadable = @room
+      @assets = @uploadable.assets
+      @room = Room.find(params[:id])
+      respond_to do |format|
+        format.html
+        format.json { render json: @room}
+      end
+      @venue = Venue.find(params[:id])
+    else
+      redirect_to error_path
+    end
   end
 
   # New function creates a new room assigned to a venue
@@ -54,19 +76,19 @@ class RoomsController < ApplicationController
 
   #=====================================================================#
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_room
-      @room = Room.find(params[:id])
-    end
-
-    def set_venue
-      @venue = Venue.find(params[:venue_id])
-    end
-
-    # Room params whitelisting
-    def room_params
-      params.require(:room).permit(:name, :venue_id, :description, :is_booked, :classification, :capacity, :booking_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_room
+    @room = Room.find(params[:id])
   end
+
+  def set_venue
+    @venue = Venue.find(params[:venue_id])
+  end
+
+  # Room params whitelisting
+  def room_params
+    params.require(:room).permit(:name, :venue_id, :description, :is_booked, :classification, :capacity, :booking_id)
+  end
+end
 
 end

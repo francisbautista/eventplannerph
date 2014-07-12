@@ -11,15 +11,15 @@ class VenuesController < ApplicationController
   end
 
   # Show function isolates venue for show view
-  def show
-    @uploadable=@venue
-    @assets = @uploadable.assets
-
-    respond_to do |format|
-      format.html
-      format.json { render json: @asset}
-    end
-  end
+  # def show
+  #   @uploadable=@venue
+  #   @assets = @uploadable.assets
+  #
+  #   respond_to do |format|
+  #     format.html
+  #     format.json { render json: @asset}
+  #   end
+  # end
 
   # New function creates new model instance
   def new
