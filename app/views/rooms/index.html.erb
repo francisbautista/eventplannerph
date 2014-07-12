@@ -26,9 +26,10 @@
         <td><%= room.venue_id %></td>
         <td><%= room.amenities %></td>
         <td><%= room.description %></td>
-        <td><%= link_to 'Show', room %></td>
-        <td><%= link_to 'Edit', edit_room_path(room) %></td>
-        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', venue_room_path(@venue, room) %></td>
+        <td><%= link_to 'Edit', edit_venue_room_path(@venue.id, room) %></td>
+        <td><%= link_to 'Delete', venue_room_path(@venue, room), :class => "btn btn-sm btn-space btn-danger pull-right", method: :delete,
+        data: { confirm: 'Are you sure you want to delete this room?' } %></td>
       </tr>
     <% end %>
   </tbody>
