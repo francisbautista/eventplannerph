@@ -11,6 +11,7 @@ class RoomsController < ApplicationController
 
   # Show function shows all rooms per venue
   def show
+
     @venue = Venue.find(params[:venue_id])
     @room = Room.find(params[:id])
     @room = @venue.rooms.find(params[:id])
@@ -99,6 +100,5 @@ class RoomsController < ApplicationController
   def room_params
     params.require(:room).permit(:name, :venue_id, :description, :is_booked, :classification, :capacity, :booking_id)
   end
-end
 
 end
