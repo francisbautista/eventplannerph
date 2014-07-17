@@ -26,9 +26,9 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @booking = Booking.find(params[:id])
-    @booking = @room.booking.new
-    @booking = @venue.room.booking.new
+    @booking = Booking.new
+    @booking.starts_at = params[:starts_at]
+    @booking.ends_at = params[:ends_at]
   end
 
   def edit
@@ -37,8 +37,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.room = Room.find(params[:room_id])
-    @booking.venue = Venue.find(params[:venue_id])
+    @booking = @room.bookings.new(booking_params)
 
     respond_to do |format|
       if @booking.save
