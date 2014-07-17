@@ -1,0 +1,593 @@
+<div class="col-md-12 col-xs-12">
+
+	<div class="col-xs-12 dashboard-flash-group">
+
+		<div class="col-xs-3" style="padding: 0 0.5em 0 0">
+			<div class="dashboard-flash" id="bookings-count">
+				<span class="dashboard-figure"> 100</span>	
+				<i class="fa fa-bookmark fa-2x" id="bookings-logo"></i>
+
+				<span class="dashboard-figure-label" id="bookings">Bookings</span>	
+			</div>	
+		</div>
+
+		<div class="col-xs-3" style="padding: 0 0.5em 0 0.5em">
+			<div class="dashboard-flash" id="reviews-count">
+				<span class="dashboard-figure"> 23</span>
+				<i class="fa fa-comment fa-2x" id="reviews-logo"></i>
+				<span class="dashboard-figure-label" id="reviews"> Reviews</span> 	
+			</div>	
+		</div>
+
+
+
+
+		<div class="col-xs-3" style="padding: 0 0.5em 0 0.5em">
+			<div class="dashboard-flash" id="venues-count">
+				<span class="dashboard-figure"><%= @supplier.venues.count %> </span>
+				<i class="fa fa-location-arrow fa-2x" id="venues-logo"></i>
+
+				<span class="dashboard-figure-label" id="venues"> Venues</span> 	
+			</div>		
+		</div>
+
+		<div class="col-xs-3" style="padding: 0 0 0 0.5em">
+			<div class="dashboard-flash" id="rooms-count">
+				<span class="dashboard-figure"> 
+				<% @room_count = 0 %>
+				<% @supplier.venues.each do |venue| %> 
+					<% @room_count += venue.rooms.count %>
+				<% end %>
+					<%= @room_count %>
+				</span>
+				<i class="fa fa-map-marker fa-2x" id="rooms-logo"></i>	
+				<span class="dashboard-figure-label" id="rooms"> Rooms </span> 	
+			</div>	
+		</div>
+
+
+	</div><!--group-->
+
+
+
+
+	<div class="col-md-12">
+		<div class="panel dash panel-dash">
+			<div class="panel-heading">
+				<i class="fa fa-bookmark fa-2x"></i> 
+				<span class="announcement-heading"> Recent Pencil Bookings</span>
+			</div>
+
+			<div class="panel-body" id ="body-bookings">
+
+			<div class="col-xs-12 bookings-div">
+				<div class="col-xs-8 no-pads-really">
+					<i class="fa fa-user"></i>&nbsp; Francis Bautista
+				</div>
+
+				<div class="col-xs-4 no-pads-really bookings-place text-right">
+
+
+				<span class="label label-light-gray booker-name">Hogwarts </span>
+
+				<div class="bookings-action">
+					<i class="fa fa-check fa-lg fa-orange"></i>
+					<i class="fa fa-trash-o fa-lg fa-orange"></i>
+				</div>
+				
+				</div>
+
+			</div><!--booking-div-->
+
+			<div class="col-xs-12 bookings-div">
+				<div class="col-xs-8 no-pads-really">
+					<i class="fa fa-user"></i>&nbsp; Francis Bautista
+				</div>
+
+				<div class="col-xs-4 no-pads-really bookings-place text-right">
+
+
+				<span class="label label-light-gray booker-name">Hogwarts </span>
+
+				<div class="bookings-action">
+					<i class="fa fa-check fa-lg fa-orange"></i>
+					<i class="fa fa-trash-o fa-lg fa-orange"></i>
+				</div>
+				
+				</div>
+
+			</div><!--booking-div-->
+			
+		
+				
+		</div><!--end body-->
+	</div><!--end panel-->
+</div>
+
+
+
+
+<div class="col-md-12">
+	<div class="panel dash panel-dash">
+		<div class="panel-heading col-xs-12">
+			<div class="col-xs-8">
+				<i class="fa fa-location-arrow fa-2x"></i>
+				<span class="announcement-heading">Venues</span>
+			</div> 
+			<div class="col-xs-4 text-right">
+				<span class="label label-light" style="display: none" id="add-venue-label"> Add Venue</span>
+				<%= link_to '<i class="fa fa-plus-circle fa-2x fa-gray fa-orange"></i>'.html_safe, new_venue_path %> 
+			</div>
+		</div>
+		<div class="panel-body">
+			<% @supplier.venues.each do |venue|  %>
+
+			<div class = "col-xs-4 no-pads">
+				<div class="dashboard-card-frame">
+					<% if venue.assets.count > 0 %>
+					<%= image_tag (Venue.find(venue.id).assets.last.photo.url(:index)), class: "dashboard-card-image" %>
+					<% else %>
+					<img src="http://placehold.it/300x200" class="dashboard-card-image">
+					<% end %>
+
+					<div class="dashboard-card-caption">
+						<div class="dashboard-card-name"><%= link_to "#{venue.name}".html_safe, venue_path(venue.id) %> </div>
+						<%= link_to '<i class="fa fa-pencil-square-o" style="margin-right: 0.6em;"></i>'.html_safe, edit_venue_path(venue.id) %> 
+						<%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, venue_path(venue.id), method: :delete, confirm: "Are you sure you want to delete this venue?"%>
+						
+					</div>
+
+				</div><!--venue frame-->
+			</div><!--col-->
+			<% end %>  
+		</div><!--panel-body--> 
+	</div><!--end panel-->
+</div>
+
+
+</div><!--first col-->
+
+
+/* DASHBOARD
+------------------------------------------*/
+
+
+
+.btn-default-gray {
+  background-color: #bbb;
+  border-color: #bbb;
+}
+
+.dashboard-wrapper{
+/*  background-color: rgb(249, 234, 192);
+  background-color: rgba(255, 255, 245, 0.5);*/
+  min-height: 500px;
+  padding: 1.5em;
+}
+
+.account-info {
+ /* background-color: rgb(247, 226, 170);*/
+ padding: 1em 0 1em 0;
+ /*  padding: 0.75em 1em 0.3em 1em;
+ min-height: 5.5em;*/
+ margin-bottom: 0.5em;
+ min-height: 4.3em;
+ background-color: transparent!important;
+}
+
+.account-type-wrapper > td > .account-name{
+  font-size: 1.5em;
+  line-height: 1.5em;
+  font-family: 'Cabin', sans-serif;
+  opacity: 1;
+  position: absolute;
+  transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -oz-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+}
+
+.account-type-wrapper > td > #venue-provider-label,
+.account-type-wrapper > td > #event-planner-label{
+  font-weight: normal;
+  opacity: 0;
+  font-size: 1em;
+  line-height: 1.5em;
+  cursor: none;
+  transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -oz-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+
+
+}
+
+.account-type-wrapper > #venue-provider-label{
+  background-color: rgba(62, 200, 230, 0.75);
+}
+
+.account-type-wrapper > #event-planner-label{
+  background-color: rgba(255, 103, 89, 0.75);
+}
+
+
+
+.account-type-wrapper > td > span > #account-type{
+  font-size: 1em;
+  right: 0;
+  color: $white;
+  font-weight: 700;
+
+}
+
+.account-type-wrapper > td > .fa-account-type{
+  cursor: pointer;
+  margin-right: 0.25em;
+  margin-top: -0.2em;
+}
+
+.account-type-wrapper:hover > td > .account-name {
+  opacity: 0;
+}
+
+.account-type-wrapper:hover > td > #venue-provider-label,
+.account-type-wrapper:hover > td > #event-planner-label{
+  opacity: 1;
+}
+
+#add-venue{
+ color: rgba(89, 89, 89, 0.7);
+}
+
+#add-venue:hover{
+ color: rgba(89, 89, 89, 1);
+}
+
+
+
+.fa-gray{
+  font-size: 1.75em;
+  color: rgba(89, 89, 89, 0.5);
+  transition: color 0.35s;
+  -webkit-transition: color 0.35s;
+  -moz-transition: color 0.35s;
+  -o-transition: color 0.35s;
+}
+
+.fa-vp{
+  color: rgba(62, 200, 230, 0.95);
+  cursor: pointer;
+
+}
+
+.fa-ep{
+  color: rgba(255, 103, 89, 0.95);
+}
+
+.fa-gray:hover, .fa-orange:hover{
+  /*color: rgba(89, 89, 89, 0.95); */
+  color: rgb(249, 209, 97);
+}
+
+.label-light{
+  background-color: $salmon;
+  color: rgba(255, 255, 245, 0.95);
+  margin-top: -0.1em;
+  border-radius: 0;
+  opacity: 0.80;
+
+
+}
+
+.label-light-gray{
+  background-color: rgba(153,153,153,0.9);
+  color: rgba(255, 255, 245, 0.95);
+  margin-top: -0.1em;
+  border-radius: 0;
+  opacity: 0.80;
+
+}
+
+.table > thead > tr > th,
+.table > thead > tr > td{
+  border-top: 0;
+  border-bottom: 2px solid #dddddd;
+}
+
+.table > tbody > tr > th,
+.table > tbody > tr > td,
+.table > tfoot > tr > th,
+.table > tfoot > tr > td{
+  border-top: 0;
+  border-bottom: 1px solid #dddddd;
+}
+
+tr#last >td{
+ border-bottom: 0;
+
+}
+
+.table-heading{
+  text-transform: uppercase;
+  font-family: 'Cabin', sans-serif;
+  font-weight: 700;
+  color: rgba(89, 89, 89, 0.5);
+  font-size: 1.2em;
+}
+
+.table-label{
+  font-size: 1.1em;
+  font-weight: 700;
+  color: rgba(89, 89, 89, 0.5);
+}
+
+.table-answer{
+  font-size: 1.1em;
+  color: rgba(89, 89, 89, 0.5);
+
+}
+
+.dashboard-flash-group{
+  margin-bottom: 2em;
+}
+
+.dashboard-flash{
+  height: 4em;
+  color: rgba(255,255,245,0.85);
+  padding: 0.4em 0 0.5em 2em;
+}
+
+#venues-count{
+  background-color: rgb(249, 209, 97);
+}
+
+#rooms-count{
+  background-color: rgba(62, 200,  230, 1);
+}
+
+#bookings-count{
+  background-color: rgba(255, 103, 89, 1);
+}
+
+#reviews-count{
+  background-color: rgb(181, 237, 118);
+}
+
+.dashboard-figure{
+  color: $white;
+  font-size: 2em;
+  line-height: 1.5em;
+  font-family: 'Cabin', sans-serif;
+  margin: 0 auto;
+}
+
+.dashboard-flash > .dashboard-figure-label{
+  font-size: 1.1em;
+  line-height: 1.5em;
+  opacity: 0;
+  transform: translateX(1.5em);
+    -webkit-transform:  translateX(1.5em);
+    -o-transform: translateX(1.5em);
+    -moz-transform: translateX(1.5em);
+  transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -oz-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+}
+
+.dashboard-flash > i {
+  margin-top: 0.15em;
+  position: absolute;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -oz-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+}
+
+.dashboard-flash:hover .dashboard-figure-label {
+  opacity: 1;
+  transform: translateX(0em);
+    -webkit-transform: translateX(0em);
+    -o-transform: translateX(0em);
+    -moz-transform: translateX(0em);
+}
+
+.dashboard-flash:hover > i{
+  opacity: 0;
+}
+
+
+.dashboard-card-frame {
+  position: relative;
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 1em;
+
+}
+
+.dashboard-card-frame .dashboard-card-image{
+  position: relative;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+  overflow: hidden;
+  display: block;
+
+}
+
+.dashboard-card-frame .dashboard-card-caption{
+    opacity: 0;
+    background-color: rgba(81, 81, 81, 0.7);
+    transition: all 0.4s ease-in-out;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 5em;
+    text-align: center;
+    color: $white;
+
+}
+
+.dashboard-card-frame:hover .dashboard-card-image{
+ -webkit-transform: scale(1.1);
+ -moz-transform: scale(1.1);
+ -o-transform: scale(1.1);
+ -ms-transform: scale(1.1);
+ transform: scale(1.1);
+}
+
+.dashboard-card-frame:hover .dashboard-card-caption{
+  opacity: 1;
+}
+
+.dashboard-card-frame .dashboard-card-caption .dashboard-card-name {
+    cursor: pointer;
+    transform: translateY(-100px);
+    -webkit-transform:  translateY(-100px);
+    -o-transform: translateY(-100px);
+    -moz-transform: translateY(-100px);
+    opacity: 0;
+
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -oz-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    color: $white;
+    background-color: $lblue;
+    font-size: 1.5em;
+    padding: 0.5em;
+}
+
+
+.dashboard-card-frame .dashboard-card-caption i {
+    cursor: pointer;
+    margin-top: 0.5em;
+    font-size: 1.5em;
+    transform: translateY(100px);
+    -webkit-transform:  translateY(100px);
+    -o-transform: translateY(100px);
+    -moz-transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -oz-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+}
+
+.dashboard-card-frame .dashboard-card-caption .dashboard-card-name a{
+/*  color: rgb(81, 81, 81);*/
+color: $white;
+}
+
+.dashboard-card-frame .dashboard-card-caption a i{
+  color: $white;
+}
+
+.dashboard-card-frame .dashboard-card-caption .dashboard-card-name:hover{
+  background-color: rgba(249, 209, 97, 0.9);
+}
+
+
+.dashboard-card-frame .dashboard-card-caption .dashboard-card-name:hover a{
+ color: $white;
+ text-decoration: none;
+}
+
+.dashboard-card-frame .dashboard-card-caption .dashboard-card-details {
+  margin-top: 0.5em;
+  display: block;
+}
+
+/*.dashboard-card-frame .dashboard-card-caption .dashboard-card-details #dashboard-card-cancel,
+.dashboard-card-frame .dashboard-card-caption .dashboard-card-details #dashboard-card-contact,
+.dashboard-card-frame .dashboard-card-caption .dashboard-card-details #dashboard-card-view{
+  margin-top: 0.5em;
+  display: none;
+}*/
+
+
+.dashboard-card-frame .dashboard-card-caption a i:hover,
+{
+  color: rgba(249, 209, 97, 0.9);
+  text-decoration: none;
+}
+
+
+.dashboard-card-frame:hover .dashboard-card-caption .dashboard-card-name,
+.dashboard-card-frame:hover .dashboard-card-caption i {
+    opacity: 1;
+    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+    -o-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+}
+.dashboard-card-frame:hover .dashboard-card-caption p {
+    transition-delay: 0.1s;
+}
+
+
+
+.panel-dash > .panel-body > .bookings-div{
+  color: rgba(158,158,158,0.9);
+  padding: 1em 1.5em ;
+  background-color: rgba(232, 232, 225,0.2);
+
+  transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+
+   border-bottom: 1px solid rgba(255, 103, 89,0.3);
+
+}
+
+.panel-dash > .panel-body > .bookings-div:hover{
+  background-color: rgba(232, 232, 225,0.7);
+}
+
+
+.panel-dash > .panel-body > .bookings-div > .bookings-place > .bookings-action{
+  opacity: 0;
+
+    transform: translateX(1.5em);
+    -webkit-transform:  translateX(1.5em);
+    -o-transform: translateX(1.5em);
+    -moz-transform: translateX(1.5em);
+      transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -oz-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+}
+
+.panel-dash > .panel-body > .bookings-div >  .bookings-place > .booker-name{
+  position: absolute;
+  right: 0;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -oz-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+}
+
+
+
+.panel-dash > .panel-body > .bookings-div:hover >  .bookings-place > .bookings-action{
+  opacity: 1;
+  cursor: pointer;
+  transform: translateX(0em);
+    -webkit-transform: translateX(0em);
+    -o-transform: translateX(0em);
+    -moz-transform: translateX(0em);
+}
+
+.panel-dash > .panel-body > .bookings-div:hover >  .bookings-place > .booker-name{
+ opacity: 0;
+
+}

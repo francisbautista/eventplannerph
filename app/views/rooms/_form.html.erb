@@ -1,4 +1,4 @@
-<%= form_for ([@venue, @room]) do |f| %>
+<%= semantic_form_for ([@venue, @room]) do |f| %>
 <% if @room.errors.any? %>
 <div id="error_explanation">
   <h2><%= pluralize(@room.errors.count, "error") %> prohibited this room from being saved:</h2>
@@ -20,8 +20,10 @@
   <%= f.check_box :is_booked %>
 </div>
 <div class="field">
-  <%= f.label :classification %><br>
-  <%= f.text_area :classification %>
+  <%= f.input :classification,  :as => :select,   :collection => ["Bar", "Restaurant", "Hotel",
+                    "Farm/Hacienda", "Garden",
+                    "Church","Ballroom", "Gallery",
+                    "Other"] %>
 </div>
 <div class="field">
   <%= f.label :capacity %><br>
