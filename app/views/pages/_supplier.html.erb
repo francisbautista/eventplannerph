@@ -2,7 +2,7 @@
 
 	<div class="col-xs-12 dashboard-flash-group">
 
-		<div class="col-xs-3" style="padding: 0 0.5em 0 0">
+		<div class="col-xs-4" style="padding: 0 0.5em 0 0">
 			<div class="dashboard-flash" id="bookings-count">
 				<span class="dashboard-figure"> 100</span>	
 				<i class="fa fa-bookmark fa-2x" id="bookings-logo"></i>
@@ -11,18 +11,9 @@
 			</div>	
 		</div>
 
-		<div class="col-xs-3" style="padding: 0 0.5em 0 0.5em">
-			<div class="dashboard-flash" id="reviews-count">
-				<span class="dashboard-figure"> 23</span>
-				<i class="fa fa-comment fa-2x" id="reviews-logo"></i>
-				<span class="dashboard-figure-label" id="reviews"> Reviews</span> 	
-			</div>	
-		</div>
 
 
-
-
-		<div class="col-xs-3" style="padding: 0 0.5em 0 0.5em">
+		<div class="col-xs-4" style="padding: 0 0.5em 0 0.5em">
 			<div class="dashboard-flash" id="venues-count">
 				<span class="dashboard-figure"><%= @supplier.venues.count %> </span>
 				<i class="fa fa-location-arrow fa-2x" id="venues-logo"></i>
@@ -31,7 +22,7 @@
 			</div>		
 		</div>
 
-		<div class="col-xs-3" style="padding: 0 0 0 0.5em">
+		<div class="col-xs-4" style="padding: 0 0 0 0.5em">
 			<div class="dashboard-flash" id="rooms-count">
 				<span class="dashboard-figure"> 
 				<% @room_count = 0 %>
@@ -93,6 +84,25 @@
 				</div>
 
 			</div><!--booking-div-->
+
+			<div class="col-xs-12 bookings-div">
+				<div class="col-xs-8 no-pads-really">
+					<i class="fa fa-user"></i>&nbsp; Tori Tadiar
+				</div>
+
+				<div class="col-xs-4 no-pads-really bookings-place text-right">
+
+
+				<span class="label label-light-gray booker-name">Hogwarts </span>
+
+				<div class="bookings-action">
+					<i class="fa fa-check fa-lg fa-orange"></i>
+					<i class="fa fa-trash-o fa-lg fa-orange"></i>
+				</div>
+				
+				</div>
+
+			</div><!--booking-div-->
 			
 		
 				
@@ -100,11 +110,11 @@
 	</div><!--end panel-->
 	</div>
 
-</div>
+
 
 
 <div class="col-md-12">
-	<div class="dash panel-dash">
+	<div class="dash panel panel-dash">
 		<div class="panel-heading col-xs-12">
 			<div class="col-xs-8">
 				<i class="fa fa-location-arrow fa-2x"></i>
@@ -119,7 +129,7 @@
 			<% @supplier.venues.each do |venue|  %>
 
 			<div class = "col-xs-4 no-pads">
-				<%= venue.classification %>
+			
 				<div class="dashboard-card-frame">
 					<% if venue.assets.count > 0 %>
 					<%= image_tag (Venue.find(venue.id).assets.last.photo.url(:index)), class: "dashboard-card-image" %>
@@ -136,6 +146,7 @@
 					</div>
 
 				</div><!--venue frame-->
+
 			</div><!--col-->
 			<% end %>  
 		</div><!--panel-body--> 
