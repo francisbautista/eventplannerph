@@ -2,10 +2,10 @@ Fabricator(:venue) do
   supplier_id     { Faker::Number.number(1) }
   name            { Faker::Company.name }
   address         { Faker::Address.street_address }
-  classification  { %w("Bar", "Restaurant", "Hotel",
-                    "Farm/Hacienda", "Garden",
-                    "Church","Ballroom", "Gallery",
-                    "Other").sample }
+  classification  { %w(Bar, Restaurant, Hotel,
+                    Farm/Hacienda, Garden,
+                    Church,Ballroom, Gallery,
+                    Other).sample }
   capacity        { Faker::Number.number(4) }
   location        { Faker::Address.state }
   environment     { Faker::Address.city_suffix }
