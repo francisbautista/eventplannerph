@@ -32,7 +32,7 @@ class Venue < ActiveRecord::Base
   belongs_to :supplier
   has_many :rooms
   has_many :bookings, :through => :rooms
-  # has_many :assets, as: :uploadable
+  has_many :assets, as: :uploadable
 
   # Venue Classification Types:
   # Pull validations from this method

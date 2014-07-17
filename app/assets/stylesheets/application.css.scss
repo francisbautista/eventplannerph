@@ -44,6 +44,7 @@ $white: rgba(255, 255, 245, 1); /* #fffff5 */
 	border: 1px solid $navhover;
 	padding: 20px;
 }
+
 @media (max-width: 699px) {
 
 }
@@ -65,7 +66,9 @@ $white: rgba(255, 255, 245, 1); /* #fffff5 */
 }
 
 body {
-	background-color: $white;
+/*	background-image: image-url('light_noise_diagonal.png');
+  background-image: image-url('brickwall.png');*/
+  background-image: image-url('subtle_white_feathers.png');
 	font-family: 'Open Sans', sans-serif;
 
 }
@@ -751,8 +754,8 @@ This stylesheet forms part of the Formtastic Rails Plugin
 }
 
 .dashboard-wrapper{
-  /*background-color: rgb(249, 234, 192);*/
-  background-color: rgba(255, 255, 245, 0.5);
+/*  background-color: rgb(249, 234, 192);
+  background-color: rgba(255, 255, 245, 0.5);*/
   min-height: 500px;
   padding: 1.5em;
 }
