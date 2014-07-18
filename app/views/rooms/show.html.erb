@@ -1,44 +1,68 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
 
-<p>
-  <strong>Name:</strong>
-  <%= @room.name %>
-</p>
 
-<p>
-  <strong>Is booked:</strong>
-  <%= @room.is_booked %>
-</p>
+  <div class="col-md-12 col-xs-12 no-padding">
 
-<p>
-  <strong>Classification:</strong>
-  <%= @room.classification %>
-</p>
+    <div class="col-xs-4 show-box no-padding">    
+    </div><!--col-->
 
-<p>
-  <strong>Capacity:</strong>
-  <%= @room.capacity %>
-</p>
+    <div class="col-xs-8 no-padding">
+        <img src="http://placekitten.com/620/400" class="img-responsive">
+    </div><!--col-->
 
-<p>
-  <strong>Booking:</strong>
-  <%= @room.booking_id %>
-</p>
+  </div><!--col-md-12-->
 
-<p>
-  <strong>Venue:</strong>
-  <%= @room.venue_id %>
-</p>
+  <div class="col-md-12 col-xs-12 no-padding">
 
-<p>
-  <strong>Amenities:</strong>
-  <%= @room.amenities %>
-</p>
+    <div class="col-xs-7 right-padding"> 
 
-<p>
-  <strong>Description:</strong>
-  <%= @room.description %>
-</p>
+      <div class="panel panel-show" id="panel-details">
+        <div class="panel-heading">
+        Details
+        </div><!--panel heading-->     
+      </div><!--panel-->   
 
-<%= link_to 'Edit', edit_venue_room_path(@venue, @room) %> |
-<%= link_to 'Back', venue_rooms_path %>
+    </div><!--col-->
+
+    <div class="col-xs-5 left-padding">
+
+      <div class="panel panel-show" id="panel-contact">
+        <div class="panel-heading">
+        Contact
+        </div><!--panel heading-->     
+      </div><!--panel-->   
+      
+    </div><!--col-->
+
+
+  </div><!--col-12-->
+
+  <div class="col-md-12 col-xs-12 no-padding">
+
+    <div class="col-xs-6 right-padding"> 
+
+      <div class="panel panel-show" id="panel-rooms">
+        <div class="panel-heading">
+        Rooms
+        </div><!--panel heading-->     
+      </div><!--panel-->   
+
+    </div><!--col-->
+
+    <div class="col-xs-6 left-padding">
+
+      <div class="panel panel-show" id="panel-photos">
+        <div class="panel-heading">
+        Photos
+        </div><!--panel heading-->     
+      </div><!--panel-->   
+      
+    </div><!--col-->
+
+
+  </div><!--col-12-->
+
+
+
+
+</div><!--container-->

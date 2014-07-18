@@ -89,6 +89,8 @@ h1, h2, h3 {
 
 .container {
 	max-width: 960px;
+  padding-top: 1em;
+  margin-bottom: 3em;
 }
 
 .carousel {
@@ -137,11 +139,17 @@ h1, h2, h3 {
 }
 
 .no-padding {
- padding: 0
+ padding: 0;
 }
 
-.less-padding {
- padding-right: 0.5em
+.right-padding {
+ padding-right: 0.75em;
+ padding-left: 0;
+}
+
+.left-padding {
+ padding-left: 0.75em;
+ padding-right: 0;
 }
 
 
@@ -186,7 +194,9 @@ h1, h2, h3 {
 
 .panel {
 	margin-top: 20px;
+  margin-bottom: 0;
 	border-radius: 0px;
+  min-height: 200px;
 }
 
 .panel > #body-bookings{
@@ -943,11 +953,11 @@ tr#last >td{
 }
 
 #rooms-count{
-  background-color: rgba(62, 200,  230, 1);
+  background-color: rgb(62, 200,  230);
 }
 
 #bookings-count{
-  background-color: rgba(255, 103, 89, 1);
+  background-color: rgb(255, 103, 89);
 }
 
 #reviews-count{
@@ -1200,5 +1210,36 @@ color: $white;
 
 }
 
+
+/* SHOW VENUE
+---------------------------------------------------------------------------------------------- */
+
+.show-box{
+  background: rgb(59, 59, 59);
+  height: 400px;
+}
+
+.panel-show > .panel-heading {
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+#panel-details{
+  border-top: 0.35em solid rgb(181, 237, 118);
+}
+
+
+#panel-contact{
+  background-color: rgb(255, 103, 89);
+  color: $white;
+}
+
+#panel-rooms{
+  border-top: 0.35em solid rgb(62, 200,  230);
+}
+
+#panel-photos{
+  border-top: 0.35em solid rgb(249, 209, 97);
+}
 
 

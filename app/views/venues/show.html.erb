@@ -1,73 +1,68 @@
-<div class="col-md-12 col-xs-12">
-<div class="container panel">
-Hello
-
-<% if @assets.present? %>
-
-<div id="venue-carousel" class="carousel slide" data-ride="carousel">
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    
-<% index_not_nil = @assets.find_index { |x| x.photo? } %>
-
-    <div id="venue-item" class="item active">
-    <a href="#"> <%= image_tag @assets[index_not_nil].photo.url(:medium) %> </a>
-    </div> <!--end first item-->
-
-<% @assets.offset(index_not_nil+1).each do |asset| %>
-   <% if asset.photo? %>
-    <div id="venue-item" class="item">
-    <a href="#"> <%= image_tag asset.photo.url(:medium) %> </a>
-    </div>
-  <%end%>  <%end%>  
-
-  </div> <!--end carousel-inner-->
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#venue-carousel" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-  </a>
-  <a class="right carousel-control" href="#venue-carousel" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-  </a>
-
-</div><!--end carousel-->
-
-<% index = 1 %>
-<!-- Indicators -->
-<div class="carousel-thumbnails">
-  <ol class="carousel-indicators">
-  
-  <li data-target="#venue-carousel" data-slide-to="0">        
-   <%= image_tag @assets[index_not_nil].photo.url(:thumb) %>   
- </li>
-<% index = 1 %>
-<% @assets.offset(index_not_nil+1).each do |asset| %>
-     <% if asset.photo? %>
- <li data-target="#venue-carousel" data-slide-to="<%= index %>"> 
-   <%= image_tag asset.photo.url(:thumb) %> 
-   <% index +=1 %>
- </li>
-   
+<div class="container">
 
 
-     <%end #if first%> 
-    <%end #asset array %>  
+  <div class="col-md-12 col-xs-12 no-padding">
+
+    <div class="col-xs-4 show-box no-padding">    
+    </div><!--col-->
+
+    <div class="col-xs-8 no-padding">
+        <img src="http://placekitten.com/620/400" class="img-responsive">
+    </div><!--col-->
+
+  </div><!--col-md-12-->
+
+  <div class="col-md-12 col-xs-12 no-padding">
+
+    <div class="col-xs-7 right-padding"> 
+
+      <div class="panel panel-show" id="panel-details">
+        <div class="panel-heading">
+        Details
+        </div><!--panel heading-->     
+      </div><!--panel-->   
+
+    </div><!--col-->
+
+    <div class="col-xs-5 left-padding">
+
+      <div class="panel panel-show" id="panel-contact">
+        <div class="panel-heading">
+        Contact
+        </div><!--panel heading-->     
+      </div><!--panel-->   
+      
+    </div><!--col-->
 
 
- </ol>
-</div>
+  </div><!--col-12-->
+
+  <div class="col-md-12 col-xs-12 no-padding">
+
+    <div class="col-xs-6 right-padding"> 
+
+      <div class="panel panel-show" id="panel-rooms">
+        <div class="panel-heading">
+        Rooms
+        </div><!--panel heading-->     
+      </div><!--panel-->   
+
+    </div><!--col-->
+
+    <div class="col-xs-6 left-padding">
+
+      <div class="panel panel-show" id="panel-photos">
+        <div class="panel-heading">
+        Photos
+        </div><!--panel heading-->     
+      </div><!--panel-->   
+      
+    </div><!--col-->
+
+
+  </div><!--col-12-->
 
 
 
 
-
-
-<% else %> 
-
-No photos available
-
-<% end %> 
-</div><!--panel-->
-</div><!--col-md-12-->
+</div><!--container-->
