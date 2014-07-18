@@ -1,100 +1,73 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-12 col-xs-12">
+<div class="container panel">
+Hello
 
-<p>
-  <strong>Name:</strong>
-  <%= @venue.name %>
-</p>
+<% if @assets.present? %>
 
-<p>
-  <strong>Address:</strong>
-  <%= @venue.address %>
-</p>
+<div id="venue-carousel" class="carousel slide" data-ride="carousel">
 
-<p>
-  <strong>Classification:</strong>
-  <%= @venue.classification %>
-</p>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    
+<% index_not_nil = @assets.find_index { |x| x.photo? } %>
 
-<p>
-  <strong>Capacity:</strong>
-  <%= @venue.capacity %>
-</p>
+    <div id="venue-item" class="item active">
+    <a href="#"> <%= image_tag @assets[index_not_nil].photo.url(:medium) %> </a>
+    </div> <!--end first item-->
 
-<p>
-  <strong>Is featured:</strong>
-  <%= @venue.is_featured %>
-</p>
+<% @assets.offset(index_not_nil+1).each do |asset| %>
+   <% if asset.photo? %>
+    <div id="venue-item" class="item">
+    <a href="#"> <%= image_tag asset.photo.url(:medium) %> </a>
+    </div>
+  <%end%>  <%end%>  
 
-<p>
-  <strong>Location:</strong>
-  <%= @venue.location %>
-</p>
+  </div> <!--end carousel-inner-->
 
-<p>
-  <strong>Environment:</strong>
-  <%= @venue.environment %>
-</p>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#venue-carousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#venue-carousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
 
-<p>
-  <strong>Comments:</strong>
-  <%= @venue.comments %>
-</p>
+</div><!--end carousel-->
 
-<p>
-  <strong>Rates:</strong>
-  <%= @venue.rates %>
-</p>
-
-<p>
-  <strong>Contact persons:</strong>
-  <%= @venue.contact_persons %>
-</p>
-
-<p>
-  <strong>Contact numbers:</strong>
-  <%= @venue.contact_numbers %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @venue.status %>
-</p>
-
-<p>
-  <strong>Booking count:</strong>
-  <%= @venue.booking_count %>
-</p>
-
-<p>
-  <strong>Caterers:</strong>
-  <%= @venue.caterers %>
-</p>
-
-<p>
-  <strong>Policy:</strong>
-  <%= @venue.policy %>
-</p>
-
-<p>
-  <strong>Is booked:</strong>
-  <%= @venue.is_booked %>
-</p>
-
-<p>
-  <strong>Freeroom count:</strong>
-  <%= @venue.freeroom_count %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @venue.email %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @venue.supplier_id %>
-</p>
+<% index = 1 %>
+<!-- Indicators -->
+<div class="carousel-thumbnails">
+  <ol class="carousel-indicators">
+  
+  <li data-target="#venue-carousel" data-slide-to="0">        
+   <%= image_tag @assets[index_not_nil].photo.url(:thumb) %>   
+ </li>
+<% index = 1 %>
+<% @assets.offset(index_not_nil+1).each do |asset| %>
+     <% if asset.photo? %>
+ <li data-target="#venue-carousel" data-slide-to="<%= index %>"> 
+   <%= image_tag asset.photo.url(:thumb) %> 
+   <% index +=1 %>
+ </li>
+   
 
 
-<%= link_to 'Edit', edit_venue_path(@venue) %> |
-<%= link_to 'Back', venues_path %>
+     <%end #if first%> 
+    <%end #asset array %>  
+
+
+ </ol>
+</div>
+
+
+
+
+
+
+<% else %> 
+
+No photos available
+
+<% end %> 
+</div><!--panel-->
+</div><!--col-md-12-->

@@ -14,7 +14,6 @@
       </div>
       <div class="panel-body">
         <% @venues.each do |venue|  %>
-
         <div class = "col-xs-4 no-pads">
         
           <div class="dashboard-card-frame">
@@ -27,6 +26,7 @@
             <div class="dashboard-card-caption">
               <div class="dashboard-card-name"><%= link_to "#{venue.name}".html_safe, venue_path(venue.id) %> </div>
 
+              <%= link_to '<i class="fa fa-arrow-circle-right" style="margin-right: 0.6em;"></i>'.html_safe, venue_path(venue.id) %> 
               <%= link_to '<i class="fa fa-pencil-square-o" style="margin-right: 0.6em;"></i>'.html_safe, edit_venue_path(venue.id) %> 
               <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, venue_path(venue.id), method: :delete, confirm: "Are you sure you want to delete this venue?"%>
               
