@@ -1216,7 +1216,55 @@ color: $white;
 
 .show-box{
   background: rgb(59, 59, 59);
-  height: 400px;
+  color: $white;
+}
+
+.show-box > .name,
+.show-box > .number{
+  margin-top: 3em;  
+  text-align: center;
+} 
+
+.show-box > .name > span{
+  font-size: 1.5em;   
+}  
+
+
+.show-box > .name > p,
+.show-box > .number > p{
+  font-size: 0.9em;   
+}  
+
+.panel-show > .panel-body > .panel-row > .show-label{
+   color: $gray;
+   font-weight: 700;
+   font-size: 1em;
+}
+
+.panel-show > .panel-body > .panel-row > .response{
+  font-size: 0.9em;
+}
+
+
+@media (min-width: 767px){
+
+  .show-box{
+    background: rgb(59, 59, 59);
+    height: 300px;
+  }
+
+  .show-box > .classification {
+    font-size: 1.5em;   
+    margin-top: 2em;
+  }  
+
+  .show-box > .classification > span {
+    background-color: $lblue; /* working color; conditional colors will follow */
+    padding: 0.5em 1em;
+  }
+
+
+
 }
 
 .panel-show > .panel-heading {
@@ -1224,15 +1272,16 @@ color: $white;
   font-weight: 300;
 }
 
-#panel-details{
-  border-top: 0.35em solid rgb(181, 237, 118);
-}
-
-
 #panel-contact{
   background-color: rgb(255, 103, 89);
   color: $white;
 }
+
+
+/*#panel-details{
+  border-top: 0.35em solid rgb(181, 237, 118);
+}
+
 
 #panel-rooms{
   border-top: 0.35em solid rgb(62, 200,  230);
@@ -1240,6 +1289,6 @@ color: $white;
 
 #panel-photos{
   border-top: 0.35em solid rgb(249, 209, 97);
-}
+}*/
 
 

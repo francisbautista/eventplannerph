@@ -1,30 +1,81 @@
 <div class="container">
 
-
   <div class="col-md-12 col-xs-12 no-padding">
 
-    <div class="col-xs-4 show-box no-padding">    
+    <div class="col-xs-4 show-box no-padding"> 
+
+      <div class="classification">
+        <span><%= @venue.classification %></span>
+      </div><!--venue classification-->
+
+      <div class="name">
+        <span><%= @venue.name %></span>
+        <p>
+        Found in <%= @venue.location %> <br>
+        <br>
+        <strong><%= @venue.capacity %></strong> people could fit here <br>
+        <strong><%= @venue.booking_count %></strong> people
+        have booked this venue <br>
+        Only <strong><%= @venue.freeroom_count %></strong> rooms left <br>
+        </p>
+      </div> <!--name-->
+
+      <div class="numbers">
+      </div>
     </div><!--col-->
 
     <div class="col-xs-8 no-padding">
-        <img src="http://placekitten.com/620/400" class="img-responsive">
+        <img src="http://placekitten.com/620/300" class="img-responsive">
     </div><!--col-->
 
   </div><!--col-md-12-->
 
+
   <div class="col-md-12 col-xs-12 no-padding">
 
-    <div class="col-xs-7 right-padding"> 
+    <div class="col-md-7 right-padding"> 
 
       <div class="panel panel-show" id="panel-details">
+
         <div class="panel-heading">
         Details
-        </div><!--panel heading-->     
+        </div><!--panel heading-->
+
+        <div class="panel-body">
+
+        <div class="col-xs-12 panel-row">
+          <div class="col-xs-4 show-label">Address
+          </div> 
+          <div class="col-xs-8 response"><%= @venue.address %>, <%= @venue.location %>
+          </div>
+        </div>
+
+        <div class="col-xs-12 panel-row">
+          <div class="col-xs-4 show-label">Rates
+          </div> 
+          <div class="col-xs-8 response"><%= @venue.rates %></div>
+        </div>
+
+        <div class="col-xs-12 panel-row">
+          <div class="col-xs-4 show-label">Policy
+          </div> 
+          <div class="col-xs-8 response"><%= @venue.policy %></div>
+        </div>
+
+        <div class="col-xs-12 panel-row">
+          <div class="col-xs-4 show-label">Caterers
+          </div> 
+          <div class="col-xs-8 response"><%= @venue.caterers %></div>
+        </div>
+
+
+        </div> <!--panel body-->    
+
       </div><!--panel-->   
 
     </div><!--col-->
 
-    <div class="col-xs-5 left-padding">
+    <div class="col-md-5 left-padding">
 
       <div class="panel panel-show" id="panel-contact">
         <div class="panel-heading">
@@ -37,9 +88,10 @@
 
   </div><!--col-12-->
 
+
   <div class="col-md-12 col-xs-12 no-padding">
 
-    <div class="col-xs-6 right-padding"> 
+    <div class="col-md-6 right-padding"> 
 
       <div class="panel panel-show" id="panel-rooms">
         <div class="panel-heading">
@@ -49,7 +101,7 @@
 
     </div><!--col-->
 
-    <div class="col-xs-6 left-padding">
+    <div class="col-md-6 left-padding">
 
       <div class="panel panel-show" id="panel-photos">
         <div class="panel-heading">
