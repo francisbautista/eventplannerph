@@ -78,9 +78,32 @@
     <div class="col-md-5 left-padding">
 
       <div class="panel panel-show" id="panel-contact">
+
+
         <div class="panel-heading">
         Contact
-        </div><!--panel heading-->     
+        </div><!--panel heading--> 
+
+        <div class="panel-body">
+
+          <div class="col-xs-7 panel-col">
+
+            <span><strong><%= @venue.contact_persons %></strong></span><br>
+            <p><%= @venue.email %><br>
+            <%= @venue.contact_numbers %></p>
+          </div> <!--panel-col-->
+
+          <div class="col-xs-5">
+
+            <img src="http://placekitten.com/100/100" class="img-circle">
+            
+          </div><!--panel-col-->
+
+
+        </div><!--panel body--> 
+
+
+
       </div><!--panel-->   
       
     </div><!--col-->
@@ -96,7 +119,24 @@
       <div class="panel panel-show" id="panel-rooms">
         <div class="panel-heading">
         Rooms
-        </div><!--panel heading-->     
+        </div><!--panel heading--> 
+
+        <div class="panel-body">
+
+        <div class="col-xs-12 panel-row no-padding">
+
+          <div class="col-xs-6 right-padding">
+            <img src="http://placekitten.com/200/150">
+          </div>
+
+          <div class="col-xs-6 left-padding">
+            <img src="http://placekitten.com/200/150">
+          </div>
+
+        </div><!--panel row-->
+
+
+        </div><!--panel-body-->     
       </div><!--panel-->   
 
     </div><!--col-->
@@ -104,9 +144,29 @@
     <div class="col-md-6 left-padding">
 
       <div class="panel panel-show" id="panel-photos">
+
         <div class="panel-heading">
         Photos
-        </div><!--panel heading-->     
+        </div><!--panel heading--> 
+
+
+        <div class="panel-body">
+
+        <div class="col-xs-12 panel-row no-padding">
+
+          <div class="col-xs-6 right-padding">
+            <img src="http://placekitten.com/200/150">
+          </div>
+
+          <div class="col-xs-6 left-padding">
+            <img src="http://placekitten.com/200/150">
+          </div>
+
+        </div><!--panel row-->
+
+        </div><!--panel-body-->  
+
+
       </div><!--panel-->   
       
     </div><!--col-->
