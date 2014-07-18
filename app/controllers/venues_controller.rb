@@ -8,20 +8,16 @@ class VenuesController < ApplicationController
   # Index function displays all venues for catalog
   def index
       @venues = Venue.all
+
+      if current_supplier.present?
+        @supplier = Supplier.find(current_supplier)
+      else
+        @user = User.find(current_user)
+      end
+
   end
 
-  # Show function isolates venue for show view
-  # def show
-  #   @uploadable=@venue
-  #   @assets = @uploadable.assets
-  #
-  #   respond_to do |format|
-  #     format.html
-  #     format.json { render json: @asset}
-  #   end
-  # end
-
-  # New function creates new model instance
+  
   def new
     @venue = Venue.new
     # @asset = Asset.new

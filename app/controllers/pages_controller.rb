@@ -5,7 +5,11 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-  	  @supplier = Supplier.find(current_supplier)
+  	if current_supplier.present?
+  		@supplier = Supplier.find(current_supplier)
+  	else
+  		@user = User.find(current_user)
+  	end
   end
 
 
