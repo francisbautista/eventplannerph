@@ -13,6 +13,8 @@
  *= require_self
  *= require fullcalendar
  *= require pushy
+ *= require bootstrap-image-gallery.min
+ *= require blueimp-gallery.min
  *= require font-awesome
  *= require_tree .
  */
@@ -191,6 +193,7 @@ h1, h2, h3 {
 	margin-top: 5px;
 	border-radius: 0px;
 }
+
 
 .panel {
 	margin-top: 20px;
@@ -1293,5 +1296,20 @@ color: $white;
 #panel-photos{
   border-top: 0.35em solid rgb(249, 209, 97);
 }*/
+
+.modal-content{
+  border-top: 0.5em solid rgb(249, 209, 97);
+  border-radius: 0px;
+}
+
+.modal-header{
+  text-align: left;
+  font-size: 1.2em;
+  border-bottom: none;
+}
+
+.modal-header{
+  border-top: none;
+}
 
 

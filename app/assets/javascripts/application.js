@@ -15,6 +15,8 @@
 //= require fullcalendar
 //= require turbolinks
 //= require jquery.turbolinks
+//= require jquery.blueimp-gallery.min
+//= require bootstrap-image-gallery.min
 //= require pushy
 //= require modernizr
 //= require bootstrap-sprockets
