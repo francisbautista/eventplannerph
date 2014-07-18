@@ -144,14 +144,17 @@ h1, h2, h3 {
  padding: 0;
 }
 
-.right-padding {
- padding-right: 0.75em;
- padding-left: 0;
-}
+@media (min-width: 767px){
 
-.left-padding {
- padding-left: 0.75em;
- padding-right: 0;
+  .right-padding {
+   padding-right: 0.75em;
+   padding-left: 0;
+  }
+
+  .left-padding {
+   padding-left: 0.75em;
+   padding-right: 0;
+  }
 }
 
 
@@ -1222,11 +1225,7 @@ color: $white;
   color: $white;
 }
 
-.show-box > .name,
-.show-box > .number{
-  margin-top: 3em;  
-  text-align: center;
-} 
+
 
 .show-box > .name > span{
   font-size: 1.5em;   
@@ -1252,10 +1251,11 @@ color: $white;
   font-size: 0.9em; 
 }
 
+
+
 @media (min-width: 767px){
 
   .show-box{
-    background: rgb(59, 59, 59);
     height: 300px;
   }
 
@@ -1267,6 +1267,35 @@ color: $white;
   .show-box > .classification > span {
     background-color: $lblue; /* working color; conditional colors will follow */
     padding: 0.5em 1em;
+  }
+
+  .show-box > .name,
+  .show-box > .number{
+  margin-top: 3em;  
+  text-align: center;
+} 
+
+}
+
+@media (max-width: 767px){
+
+  .show-box{
+    border-bottom: 1em solid rgb(59, 59, 59);
+  }
+
+  .show-box > .name{
+    margin-top: 1em;  
+    text-align: center;
+  } 
+
+  .show-box > .classification {   
+    margin-top: 3em;
+  }  
+
+  .show-box > .classification > span {
+    background-color: $lblue; /* working color; conditional colors will follow */
+    padding: 0 0.5em 0 0;
+    font-weight: 700;
   }
 
 
