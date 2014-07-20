@@ -144,7 +144,7 @@ h1, h2, h3 {
  padding: 0;
 }
 
-@media (min-width: 767px){
+@media (min-width: 960px){
 
   .right-padding {
    padding-right: 0.75em;
@@ -697,7 +697,7 @@ This stylesheet forms part of the Formtastic Rails Plugin
       margin-top: 1.2em;
     }
   
-      .navbar-nav > li > #log-in-dropdown{
+    .navbar-nav > li > #log-in-dropdown{
       margin-top: 0.07em;
    }
 
@@ -756,11 +756,6 @@ This stylesheet forms part of the Formtastic Rails Plugin
   /*color: rgba(89, 89, 89, 0.95); */
   color: rgb(249, 209, 97);
 }
-
-
-
-
-
 
 
 
@@ -978,186 +973,6 @@ tr#last >td{
   margin: 0 auto;
 }
 
-.dashboard-flash > .dashboard-figure-label{
-  font-size: 1.1em;
-  line-height: 1.5em;
-  opacity: 0;
-  transform: translateX(1.5em);
-    -webkit-transform:  translateX(1.5em);
-    -o-transform: translateX(1.5em);
-    -moz-transform: translateX(1.5em);
-  transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-    -oz-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-}
-
-.dashboard-flash > i {
-  margin-top: 0.15em;
-  position: absolute;
-  opacity: 1;
-  transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-    -oz-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-}
-
-.dashboard-flash:hover .dashboard-figure-label {
-  opacity: 1;
-  transform: translateX(0em);
-    -webkit-transform: translateX(0em);
-    -o-transform: translateX(0em);
-    -moz-transform: translateX(0em);
-}
-
-.dashboard-flash:hover > i{
-  opacity: 0;
-}
-
-
-.dashboard-card-frame {
-  position: relative;
-  height: auto;
-  width: 100%;
-  overflow: hidden;
-  margin-bottom: 1em;
-
-}
-
-.dashboard-card-frame .dashboard-card-image{
-  position: relative;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  transition: all 1s ease;
-  overflow: hidden;
-  display: block;
-
-}
-
-.dashboard-card-frame .dashboard-card-caption{
-    opacity: 0;
-    background-color: rgba(81, 81, 81, 0.7);
-    transition: all 0.4s ease-in-out;
-    position: absolute;
-    overflow: hidden;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding-top: 5em;
-    text-align: center;
-    color: $white;
-
-}
-
-.dashboard 
-
-.dashboard-card-frame:hover .dashboard-card-image{
- -webkit-transform: scale(1.1);
- -moz-transform: scale(1.1);
- -o-transform: scale(1.1);
- -ms-transform: scale(1.1);
- transform: scale(1.1);
-}
-
-.dashboard-card-frame:hover .dashboard-card-caption{
-  opacity: 1;
-}
-
-.dashboard-card-frame .dashboard-card-caption .dashboard-card-name {
-    cursor: pointer;
-    transform: translateY(-100px);
-    -webkit-transform:  translateY(-100px);
-    -o-transform: translateY(-100px);
-    -moz-transform: translateY(-100px);
-    opacity: 0;
-
-    transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-    -oz-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    color: $white;
-    background-color: $lblue;
-    font-size: 1.5em;
-    padding: 0.5em;
-}
-
-.dashboard-card-frame .dashboard-card-caption .dashboard-card-name#users{
-  
-}
-
-
-
-.dashboard-card-frame .dashboard-card-caption i {
-    cursor: pointer;
-    margin-top: 0.5em;
-    font-size: 1.5em;
-    transform: translateY(100px);
-    -webkit-transform:  translateY(100px);
-    -o-transform: translateY(100px);
-    -moz-transform: translateY(100px);
-    opacity: 0;
-    transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-    -oz-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-}
-
-.dashboard-card-frame .dashboard-card-caption .dashboard-card-name a{
-/*  color: rgb(81, 81, 81);*/
-color: $white;
-}
-
-.dashboard-card-frame .dashboard-card-caption a i{
-  color: $white;
-}
-
-.dashboard-card-frame .dashboard-card-caption .dashboard-card-name:hover{
-  background-color: rgba(249, 209, 97, 0.9);
-}
-
-
-.dashboard-card-frame .dashboard-card-caption .dashboard-card-name:hover a{
- color: $white;
- text-decoration: none;
-}
-
-.dashboard-card-frame .dashboard-card-caption .dashboard-card-details {
-  margin-top: 0.5em;
-  display: block;
-}
-
-/*.dashboard-card-frame .dashboard-card-caption .dashboard-card-details #dashboard-card-cancel,
-.dashboard-card-frame .dashboard-card-caption .dashboard-card-details #dashboard-card-contact,
-.dashboard-card-frame .dashboard-card-caption .dashboard-card-details #dashboard-card-view{
-  margin-top: 0.5em;
-  display: none;
-}*/
-
-
-.dashboard-card-frame .dashboard-card-caption a i:hover,
-{
-  color: rgba(249, 209, 97, 0.9);
-  text-decoration: none;
-}
-
-
-.dashboard-card-frame:hover .dashboard-card-caption .dashboard-card-name,
-.dashboard-card-frame:hover .dashboard-card-caption i {
-    opacity: 1;
-    transform: translateY(0px);
-    -webkit-transform: translateY(0px);
-    -o-transform: translateY(0px);
-    -moz-transform: translateY(0px);
-}
-.dashboard-card-frame:hover .dashboard-card-caption p {
-    transition-delay: 0.1s;
-}
-
-
-
 .panel-dash > .panel-body > .bookings-div{
   color: rgba(158,158,158,0.9);
   padding: 1em 1.5em ;
@@ -1341,4 +1156,23 @@ color: $white;
   border-top: none;
 }
 
+/* VENUE AND ROOM CARDS
+---------------------------------------------------------------------------------------------- */
+
+dt.card-frame{
+  float: left;
+  width: 30%;
+  background-color: $white;
+  padding: 0.75em;
+  margin: 1em;
+}
+
+
+dt:nth-of-type(3n+1){
+  clear: left;
+}
+
+dt > .card-image{
+  max-width: 100%;
+}
 
