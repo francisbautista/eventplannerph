@@ -24,13 +24,12 @@
             <% if venue.assets.count > 0 %>
                 <%= image_tag (Venue.find(venue.id).assets.last.photo.url(:index)), class: "card-image" %>
                 <% else %>
-                <img src="http://placehold.it/250x200" class="card-image">
+                <img src="http://placekitten.com/250/200" class="card-image">
              <% end %>
 
             <div class="card-name"><%= link_to "#{venue.name}".html_safe, venue_path(venue.id) %> </div>  
 
-            <div class="card-action">
-              <%= link_to '<i class="fa fa-arrow-circle-right" style="margin-right: 0.6em;"></i>'.html_safe, venue_path(venue.id) %> 
+            <div class="card-action text-right">
               <%= link_to '<i class="fa fa-pencil-square-o" style="margin-right: 0.6em;"></i>'.html_safe, edit_venue_path(venue.id) %> 
               <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, venue_path(venue.id), method: :delete, confirm: "Are you sure you want to delete this venue?"%>
 

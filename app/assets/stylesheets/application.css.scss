@@ -1164,13 +1164,52 @@ dt.card-frame{
   background-color: $white;
   padding: 0.75em;
   margin: 1em;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.07);
 }
-
 
 
 dt > .card-image{
   max-width: 100%;
 }
+
+dt > .card-label  {
+  background-color: $lblue; /* working color; conditional colors will follow */
+  padding: 0.25em 0.75em;
+  font-size: 1em;
+}
+
+dt > .card-name > a {
+  text-decoration: none;
+  color: $gray;
+  font-size: 1.2em;
+  font-weight: 300;
+  transition: color 0.3s ease-in-out;
+  -webkit-transition: color 0.3s ease-in-out;
+  -moz-transition: color 0.3s ease-in-out;
+  -o-transition: color 0.3s ease-in-out;
+}
+
+dt > .card-action > a{
+  text-decoration: none;
+  color: rgba(87, 94, 92, 0.5);
+  transition: color 0.3s;
+  -webkit-transition: color 0.3s ease-in-out;
+  -moz-transition: color 0.3s ease-in-out;
+  -o-transition: color 0.3s ease-in-out;
+}
+
+dt > .card-name > a:hover,
+dt > .card-name > a:focus,
+dt > .card-action > a:hover,
+dt > .card-action > a:focus{
+  color: rgb(249, 209, 97);
+}
+
+
+
+
+
 
 @media (min-width: 960px){
 
@@ -1185,14 +1224,25 @@ dt > .card-image{
 }
 
 
-@media (max-width: 700px) and (min-device-width: 320px) {
+@media (max-width: 700px) and (min-device-width: 440px) {
 
   dt.card-frame{
     width: 45%;
-    margin: 0.75em;
+    margin: 0.5em;
   }
   dt:nth-of-type(2n+1){
     clear: left;
   }
 
 }
+
+@media (max-width: 440px) {
+
+  dt.card-frame{
+    width: 100%;
+    margin: 0.75em;
+  }
+
+
+}
+
