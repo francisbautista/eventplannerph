@@ -1,3 +1,48 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// You can use Sass (SCSS) here: http://sasslang.com/
+
+.dashboard-figure{
+  color: #fff;
+  font-size: 2em;
+  line-height: 1.5em;
+  font-family: 'Cabin', sans-serif;
+  margin: 0 auto;
+}
+
+
+.dashboard-flash > .dashboard-figure-label{
+  font-size: 1.1em;
+   line-height: 1.5em;
+   opacity: 0;
+   transform: translateX(1.5em);
+    -webkit-transform:  translateX(1.5em);
+    -o-transform: translateX(1.5em);
+    -moz-transform: translateX(1.5em);
+   transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -moztransition: all 0.2s ease-in-out;
+ }
+ 
+ .dashboard-flash > i {
+   margin-top: 0.15em;
+   position: absolute;
+   opacity: 1;
+   transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -moztransition: all 0.2s ease-in-out;
+ }
+ 
+ .dashboard-flash:hover .dashboard-figure-label {
+   opacity: 1;
+   transform: translateX(0em);
+    -webkit-transform: translateX(0em);
+    -o-transform: translateX(0em);
+    -moz-transform: translateX(0em);
+ }
+ 
+ .dashboard-flash:hover > i{
+   opacity: 0;
+ }

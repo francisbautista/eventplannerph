@@ -1,160 +1,164 @@
-<div class="col-md-12 col-xs-12">
+  <div class="col-md-12 dashboard-flash-group">
 
-	<div class="col-xs-12 dashboard-flash-group">
+  <div class="col-xs-4" style="padding: 0 0.5em 0 0">
+    <div class="dashboard-flash" id="bookings-count">
+      <span class="dashboard-figure"> 100</span>  
+      <i class="fa fa-bookmark fa-2x" id="bookings-logo"></i>
 
-		<div class="col-xs-4" style="padding: 0 0.5em 0 0">
-			<div class="dashboard-flash" id="bookings-count">
-				<span class="dashboard-figure"> 100</span>	
-				<i class="fa fa-bookmark fa-2x" id="bookings-logo"></i>
-
-				<span class="dashboard-figure-label" id="bookings">Bookings</span>	
-			</div>	
-		</div>
+      <span class="dashboard-figure-label" id="bookings">Bookings</span>  
+    </div>  
+  </div>
 
 
 
-		<div class="col-xs-4" style="padding: 0 0.5em 0 0.5em">
-			<div class="dashboard-flash" id="venues-count">
-				<span class="dashboard-figure"><%= @supplier.venues.count %> </span>
-				<i class="fa fa-location-arrow fa-2x" id="venues-logo"></i>
+  <div class="col-xs-4" style="padding: 0 0.5em 0 0.5em">
+    <div class="dashboard-flash" id="venues-count">
+      <span class="dashboard-figure"><%= @supplier.venues.count %> </span>
+      <i class="fa fa-location-arrow fa-2x" id="venues-logo"></i>
 
-				<span class="dashboard-figure-label" id="venues"> Venues</span> 	
-			</div>		
-		</div>
+      <span class="dashboard-figure-label" id="venues"> Venues</span>   
+    </div>    
+  </div>
 
-		<div class="col-xs-4" style="padding: 0 0 0 0.5em">
-			<div class="dashboard-flash" id="rooms-count">
-				<span class="dashboard-figure"> 
-				<% @room_count = 0 %>
-				<% @supplier.venues.each do |venue| %> 
-					<% @room_count += venue.rooms.count %>
-				<% end %>
-					<%= @room_count %>
-				</span>
-				<i class="fa fa-map-marker fa-2x" id="rooms-logo"></i>	
-				<span class="dashboard-figure-label" id="rooms"> Rooms </span> 	
-			</div>	
-		</div>
-	</div><!--group-->
-
-
-	<div class="col-md-12">
-		<div class="panel dash panel-dash">
-			<div class="panel-heading col-xs-12">
-				<div class="col-xs-8">
-					<i class="fa fa-bookmark fa-2x"></i> 
-					<span class="announcement-heading"> Recent Pencil Bookings</span>
-				</div>
-			</div>
-
-			<div class="panel-body" id ="body-bookings">
-
-			<div class="col-xs-12 bookings-div">
-				<div class="col-xs-8 no-pads-really">
-					<i class="fa fa-user"></i>&nbsp; Francis Bautista
-				</div>
-
-				<div class="col-xs-4 no-pads-really bookings-place text-right">
-
-
-				<span class="label label-light-gray booker-name">Hogwarts </span>
-
-				<div class="bookings-action">
-					<i class="fa fa-check fa-lg fa-orange"></i>
-					<i class="fa fa-trash-o fa-lg fa-orange"></i>
-				</div>
-				
-				</div>
-
-			</div><!--booking-div-->
-
-			<div class="col-xs-12 bookings-div">
-				<div class="col-xs-8 no-pads-really">
-					<i class="fa fa-user"></i>&nbsp; Francis Bautista
-				</div>
-
-				<div class="col-xs-4 no-pads-really bookings-place text-right">
-
-
-				<span class="label label-light-gray booker-name">Hogwarts </span>
-
-				<div class="bookings-action">
-					<i class="fa fa-check fa-lg fa-orange"></i>
-					<i class="fa fa-trash-o fa-lg fa-orange"></i>
-				</div>
-				
-				</div>
-
-			</div><!--booking-div-->
-
-			<div class="col-xs-12 bookings-div">
-				<div class="col-xs-8 no-pads-really">
-					<i class="fa fa-user"></i>&nbsp; Tori Tadiar
-				</div>
-
-				<div class="col-xs-4 no-pads-really bookings-place text-right">
-
-
-				<span class="label label-light-gray booker-name">Hogwarts </span>
-
-				<div class="bookings-action">
-					<i class="fa fa-check fa-lg fa-orange"></i>
-					<i class="fa fa-trash-o fa-lg fa-orange"></i>
-				</div>
-				
-				</div>
-
-			</div><!--booking-div-->
-			
-		
-				
-		</div><!--end body-->
-	</div><!--end panel-->
-	</div>
+  <div class="col-xs-4" style="padding: 0 0 0 0.5em">
+    <div class="dashboard-flash" id="rooms-count">
+      <span class="dashboard-figure"> 
+      <% @room_count = 0 %>
+      <% @supplier.venues.each do |venue| %> 
+        <% @room_count += venue.rooms.count %>
+      <% end %>
+        <%= @room_count %>
+      </span>
+      <i class="fa fa-map-marker fa-2x" id="rooms-logo"></i>  
+      <span class="dashboard-figure-label" id="rooms"> Rooms </span>  
+    </div>  
+  </div>
+</div><!--group-->
 
 
 
 
-<div class="col-md-12">
-	<div class="dash panel panel-dash">
+
+<div class="col-md-12" style="margin-bottom:2em">
+<div class="panel dash panel-dash">
+  <div class="panel-heading col-xs-12">
+    <div class="col-xs-8">
+      <i class="fa fa-bookmark fa-2x"></i> 
+      <span class="announcement-heading"> Recent Pencil Bookings</span>
+    </div>
+  </div>
+
+  <div class="panel-body" id ="body-bookings">
+
+  <div class="col-xs-12 bookings-div">
+    <div class="col-xs-8 no-pads-really">
+      <i class="fa fa-user"></i>&nbsp; Francis Bautista
+    </div>
+
+    <div class="col-xs-4 no-pads-really bookings-place text-right">
+
+
+    <span class="label label-light-gray booker-name">Hogwarts </span>
+
+    <div class="bookings-action">
+      <i class="fa fa-check fa-lg fa-orange"></i>
+      <i class="fa fa-trash-o fa-lg fa-orange"></i>
+    </div>
+    
+    </div>
+
+  </div><!--booking-div-->
+  
+
+  <div class="col-xs-12 bookings-div">
+    <div class="col-xs-8 no-pads-really">
+      <i class="fa fa-user"></i>&nbsp; Francis Bautista
+    </div>
+
+    <div class="col-xs-4 no-pads-really bookings-place text-right">
+
+
+    <span class="label label-light-gray booker-name">Hogwarts </span>
+
+    <div class="bookings-action">
+      <i class="fa fa-check fa-lg fa-orange"></i>
+      <i class="fa fa-trash-o fa-lg fa-orange"></i>
+    </div>
+    
+    </div>
+
+  </div><!--booking-div-->
+  <div class="col-xs-12 bookings-div">
+    <div class="col-xs-8 no-pads-really">
+      <i class="fa fa-user"></i>&nbsp; Tori Tadiar
+    </div>
+
+    <div class="col-xs-4 no-pads-really bookings-place text-right">
+
+
+    <span class="label label-light-gray booker-name">Hogwarts </span>
+
+    <div class="bookings-action">
+      <i class="fa fa-check fa-lg fa-orange"></i>
+      <i class="fa fa-trash-o fa-lg fa-orange"></i>
+    </div>
+    
+    </div>
+
+  </div><!--booking-div-->
+  
+
+    
+</div><!--end body-->
+</div><!--end panel-->
+</div>
+
+
+<div class="col-md-12 no-padding">
+	<div class="dash panel-dash">
 		<div class="panel-heading col-xs-12">
 			<div class="col-xs-8">
 				<i class="fa fa-location-arrow fa-2x"></i>
-				<span class="announcement-heading">Venues</span>
+				<span class="announcement-heading">My Venues</span>
 			</div> 
 			<div class="col-xs-4 text-right">
 				<span class="label label-light" style="display: none" id="add-venue-label"> Add Venue</span>
 				<%= link_to '<i class="fa fa-plus-circle fa-2x fa-gray fa-orange"></i>'.html_safe, new_venue_path %> 
 			</div>
 		</div>
-		<div class="panel-body">
-			<% @supplier.venues.each do |venue|  %>
+      <div class="panel-body">
+      <dl>
+        <% @supplier.venues.each do |venue|  %>
+       
+        
+          <dt class="card-frame">
 
-			<div class = "col-xs-4 no-pads">
-			
-				<div class="dashboard-card-frame">
-					<% if venue.assets.count > 0 %>
-					<%= image_tag (Venue.find(venue.id).assets.last.photo.url(:index)), class: "dashboard-card-image" %>
-					<% else %>
-					<img src="http://placehold.it/300x200" class="dashboard-card-image">
-					<% end %>
+            <div class="card-label"><%= venue.classification %></div>
+            
+            <% if venue.assets.count > 0 %>
+                <%= image_tag (Venue.find(venue.id).assets.last.photo.url(:index)), class: "card-image" %>
+                <% else %>
+                <img src="http://placekitten.com/250/200" class="card-image">
+             <% end %>
 
-					<div class="dashboard-card-caption">
-						<div class="dashboard-card-name"><%= link_to "#{venue.name}".html_safe, venue_path(venue.id) %> </div>
+            <div class="card-name"><%= link_to "#{venue.name}".html_safe, venue_path(venue.id) %> </div>  
 
-						<%= link_to '<i class="fa fa-pencil-square-o" style="margin-right: 0.6em;"></i>'.html_safe, edit_venue_path(venue.id) %> 
-						<%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, venue_path(venue.id), method: :delete, confirm: "Are you sure you want to delete this venue?"%>
-						
-					</div>
+            <div class="card-action text-right">
+              <%= link_to '<i class="fa fa-pencil-square-o" style="margin-right: 0.6em;"></i>'.html_safe, edit_venue_path(venue.id) %> 
+              <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, venue_path(venue.id), method: :delete, confirm: "Are you sure you want to delete this venue?"%>
 
-				</div><!--venue frame-->
+            </div>
 
-			</div><!--col-->
-			<% end %>  
-		</div><!--panel-body--> 
+
+          </dt><!--card frame-->
+
+        
+        <% end %>  
+      </dl>
+      </div><!--panel-body--> 
 	</div><!--end panel-->
 </div>
 
 
-</div><!--first col-->
+
 

@@ -771,10 +771,7 @@ This stylesheet forms part of the Formtastic Rails Plugin
 }
 
 .dashboard-wrapper{
-/*  background-color: rgb(249, 234, 192);
-  background-color: rgba(255, 255, 245, 0.5);*/
   min-height: 500px;
-  padding: 1.5em;
 }
 
 .account-info {
@@ -965,13 +962,6 @@ tr#last >td{
   background-color: rgb(181, 237, 118);
 }
 
-.dashboard-figure{
-  color: $white;
-  font-size: 2em;
-  line-height: 1.5em;
-  font-family: 'Cabin', sans-serif;
-  margin: 0 auto;
-}
 
 .panel-dash > .panel-body > .bookings-div{
   color: rgba(158,158,158,0.9);
@@ -987,6 +977,12 @@ tr#last >td{
 
 }
 
+.panel-dash > .panel-heading > div > span {
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+
 .panel-dash > .panel-body > .bookings-div:hover{
   background-color: rgba(232, 232, 225,0.7);
 }
@@ -994,15 +990,14 @@ tr#last >td{
 
 .panel-dash > .panel-body > .bookings-div > .bookings-place > .bookings-action{
   opacity: 0;
-
-    transform: translateX(1.5em);
-    -webkit-transform:  translateX(1.5em);
-    -o-transform: translateX(1.5em);
-    -moz-transform: translateX(1.5em);
-      transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-    -oz-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
+  transform: translateX(1.5em);
+  -webkit-transform:  translateX(1.5em);
+  -o-transform: translateX(1.5em);
+  -moz-transform: translateX(1.5em);
+    transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -oz-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
 }
 
 .panel-dash > .panel-body > .bookings-div >  .bookings-place > .booker-name{
@@ -1171,6 +1166,14 @@ dt.card-frame{
 
 dt > .card-image{
   max-width: 100%;
+  position: relative;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+  transition: all 1s ease;
+  overflow: hidden;
+  display: block;
 }
 
 dt > .card-label  {
@@ -1241,7 +1244,14 @@ dt > .card-action > a:focus{
   dt.card-frame{
     width: 100%;
     margin: 0.75em;
+    overflow: hidden;
+    position: relative;
   }
+
+  dt.card-frame .card-image{  
+    max-width: 100%;
+  }
+
 
 
 }
