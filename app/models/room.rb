@@ -16,7 +16,7 @@
 #
 
 class Room < ActiveRecord::Base
-  
+
   # Model Relations-----------------#
   belongs_to :venue
   has_many :bookings
@@ -27,6 +27,7 @@ class Room < ActiveRecord::Base
       "Gallery", "Covered Courts","Field"]
 
       validates :name, presence: true
+      # Commented out for seeding
       validates :classification, presence: true, inclusion: { in: CLASSIFICATION}
       validates :capacity, numericality: { only_integer: true }
 

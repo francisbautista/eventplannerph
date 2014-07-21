@@ -1,7 +1,6 @@
 Fabricator(:supplier) do
   email                  { Faker::Internet.email }
-  password               { "password" }
-  password_confirmation  { |attrs| attrs[:password] }
+  password               "password"
   username               { Faker::Internet.user_name }
   company_name           { Faker::Company.name }
   address                { Faker::Address.street_address }
@@ -10,4 +9,5 @@ Fabricator(:supplier) do
   mobile                 { Faker::PhoneNumber.cell_phone }
   telephone              { Faker::PhoneNumber.phone_number }
   birthday               { Faker::Business.credit_card_expiry_date }
+  venues(count: 4) { Fabricate.build(:venue, supplier: nil) }
 end

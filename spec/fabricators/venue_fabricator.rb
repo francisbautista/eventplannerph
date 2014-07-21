@@ -1,10 +1,10 @@
 Fabricator(:venue) do
-  supplier_id     { Faker::Number.number(1) }
+  supplier
   name            { Faker::Company.name }
   address         { Faker::Address.street_address }
   classification  { %w(Bar Restaurant Hotel
                     Farm/Hacienda Garden
-                    Church Ballroom Gallery 
+                    Church Ballroom Gallery
                     Other).sample }
   capacity        { Faker::Number.number(4) }
   location        { Faker::Address.state }
@@ -18,4 +18,5 @@ Fabricator(:venue) do
   policy          { Faker::Hacker.say_something_smart}
   freeroom_count  { Faker::Number.number(2) }
   email           { Faker::Internet.email }
+  # rooms(count: 5) { Fabricate.build(:room, venue: nil) }
 end

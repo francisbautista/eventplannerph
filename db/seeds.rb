@@ -21,5 +21,5 @@ Supplier.create!(first_name: 'Eyana', last_name: 'Mallari',
             email: 'eyanamallari@gmail.com', password: 'password')
 
 
-50.times { Fabricate(:supplier) }
-50.times { Fabricate(:venue) }
+25.times { Fabricate(:supplier) }
+70.times { Fabricate(:room, venue: nil) }
