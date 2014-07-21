@@ -199,7 +199,6 @@ h1, h2, h3 {
 
 
 .panel {
-	margin-top: 20px;
   margin-bottom: 0;
 	border-radius: 0px;
   min-height: 200px;
@@ -982,14 +981,29 @@ tr#last >td{
   background-color: rgba(59,59,59,0.1);
 }
 
+.panel-dash > .panel-body > .notif-div{
+  color: rgba(158,158,158,0.9);
+  padding: 1em 1.5em;
+  background-color: rgba(232, 232, 225,0.2);
+
+  transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+
+}
+
+.panel-dash > .panel-body > .notif-div:nth-of-type(2n+2){
+  background-color: rgba(59,59,59,0.1);
+}
+
 .panel-dash > .panel-heading > div > span {
   font-size: 1.5em;
   font-weight: 300;
 }
 
-
 .panel-dash > .panel-body > .bookings-div:hover{
-  background-color: rgba(232, 232, 225,0.7);
+  background-color: rgba(255, 103, 89, 0.1);
 }
 
 
@@ -1198,6 +1212,12 @@ dt > .card-name > a {
   -o-transition: color 0.3s ease-in-out;
 }
 
+dt > #card-user{
+  font-weight: 300;
+  font-size: 0.8em;
+}
+
+
 dt > .card-action > a{
   text-decoration: none;
   color: rgba(87, 94, 92, 0.5);
@@ -1224,9 +1244,17 @@ dt > .card-action > a:focus{
   dt.card-frame{
     width: 30%;
   }
+  dt#card-user{
+    width: 45%;
+    margin: 0.5em;
+  }
 
   dt:nth-of-type(3n+1){
     clear: left;
+  }
+  dt#card-user:nth-of-type(2n){
+    clear: right;
+
   }
 
 }
